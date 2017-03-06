@@ -6,7 +6,7 @@ In this repository we will build a visualization of the other teams aggregated d
 
 ## Setup
 
-In order get the project running we need to some tools need to be installed.
+In order get the project running, we need to some tools to be installed.
 
 ### node.js 6+
 
