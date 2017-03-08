@@ -3,6 +3,11 @@
 
 In this repository we will build a visualization of the other teams aggregated data
 
+## Run Project
+
+If everything is on track, in the project directory, run `yarn start`. This should start the webpack-dev-server and you should see the initial page with **Hello World** when you browse to http://localhost:8080
+
+To start the elastic search server locally run `run_elasticsearch_server.bat` in the project directory.
 
 ## Setup
 
@@ -28,6 +33,3 @@ yarn global add standard@v8.4.0
 #### Yarn Installs
 
 Clone the repo/checkout the branch where the project setup is. In the terminal, navigate to the project directory, and run `yarn`. All the dependencies should then be installed.
-
-If everything is on track, in the project directory, run `yarn start`. This should start the webpack-dev-server and you should see the initial page with **Hello World** when you browse to http://localhost:8080
-
