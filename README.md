@@ -31,3 +31,6 @@ Clone the repo/checkout the branch where the project setup is. In the terminal, 
 
 If everything is on track, in the project directory, run `yarn start`. This should start the webpack-dev-server and you should see the initial page with **Hello World** when you browse to http://localhost:8080
 
+
+All photos used in this project are licenced under the **_Creative Commons Zero (CC0) license._**
+
