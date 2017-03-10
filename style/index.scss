@@ -1,13 +1,4 @@
 @import 'colors';
-
-.home-background {
-    background-color: $flat-turquoise;
-}
-
-.parent-center {
-    color: $flat-clouds;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-}
+@import 'landing';
+@import 'text';
+@import 'positioning';

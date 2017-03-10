@@ -1,0 +1,58 @@
+.home-background {
+  background: linear-gradient(
+          rgba(28, 53, 86, 0.25),
+          rgba(28, 53, 86, 0.25)
+  ),
+  url(img/background_auditorium_blur.jpg);
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.full-height {
+  height: 100vh;
+}
+
+.parent-center {
+    color: $flat-clouds;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.landing {
+  
+  input {
+    border-bottom: solid 1px #ccc !important;
+    background: none;
+    border: none;
+    box-shadow: none !important;
+    font-size: 30px;
+    height: 60px;
+    border-radius: 0px;
+    outline: none;
+    color: $flat-gray-1;
+  }
+
+  ::-webkit-input-placeholder { /* Chrome */
+    color: $flat-gray-2;
+    opacity: 0.6;
+  }
+
+  :-ms-input-placeholder { /* IE 10+ */
+    color: $flat-gray-1;
+    opacity: 0.6;
+  }
+
+  ::-moz-placeholder { /* Firefox 19+ */
+    color: $flat-gray-1;
+    opacity: 0.6;
+  }
+
+  :-moz-placeholder { /* Firefox 4 - 18 */
+    color: $flat-gray-1;
+    opacity: 0.6;
+  }
+
+}
