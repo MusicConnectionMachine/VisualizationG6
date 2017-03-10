@@ -1,6 +1,0 @@
-FROM docker.elastic.co/elasticsearch/elasticsearch:5.2.2
-USER root
-COPY composition-test-data.json /usr/local/bin
-COPY startup.sh /usr/local/bin
-CMD bash -c '/usr/local/bin/startup.sh & bin/es-docker'
-USER elasticsearch

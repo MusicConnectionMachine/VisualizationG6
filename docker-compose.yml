@@ -2,7 +2,7 @@ version: '2'
 services:
   elasticsearch:
     #build: ./elasticsearch_build
-    image: musicconnectionmachine/elasticsearchg6:0.0.2
+    image: musicconnectionmachine/elasticsearchg6:0.0.3
     container_name: elasticsearch
     environment:
       - cluster.name=docker-cluster
@@ -11,6 +11,7 @@ services:
       - xpack.security.authc.anonymous.username=anonymous_user
       - xpack.security.authc.anonymous.roles=read_music
       - xpack.security.authc.anonymous.authz_exception=false
+      - xpack.security.enabled=false
     ulimits:
       memlock:
         soft: -1
