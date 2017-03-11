@@ -41,3 +41,7 @@ Docker is a virtualisation suit for servers. We use it to run Elasticsearch. Doc
 You have to install the [Community Edition of Docker](https://store.docker.com/search?type=edition&offering=community) for your operating sytem.
 
 Troubleshooting on Windows: If Virtualization is enabled, but wont work, try to [disable & enable Hyper-V](https://docs.microsoft.com/en-us/virtualization/hyper-v-on-windows/quick-start/enable-hyper-v).
+
+###### Additional Licences
+
+All photos used in this project are licenced under the **_Creative Commons Zero (CC0) license._**
