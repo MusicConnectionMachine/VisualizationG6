@@ -9,11 +9,14 @@ const HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
 
 module.exports = {
   context: __dirname,
-  entry: './client/index.js',
-  devtool: 'source-map',
+  entry: './client/App.js',
+  devtool: 'eval',
   output: {
     path: path.join(__dirname, '/public'),
     filename: 'bundle.js'
+  },
+  devServer: {
+    historyApiFallback: true
   },
   resolve: {
     extensions: ['.js', '.json']
