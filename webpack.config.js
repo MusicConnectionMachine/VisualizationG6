@@ -9,11 +9,15 @@ const HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
 
 module.exports = {
   context: __dirname,
-  entry: './client/index.js',
-  devtool: 'source-map',
+  entry: './client/App.js',
+  devtool: 'eval',
   output: {
     path: path.join(__dirname, '/public'),
     filename: 'bundle.js'
+  },
+  devServer: {
+    publicPath: '/public/',
+    historyApiFallback: true
   },
   resolve: {
     extensions: ['.js', '.json']
@@ -56,7 +60,7 @@ module.exports = {
         test: /\.(jpg|png|svg|jpeg)$/,
         loader: 'url-loader',
         options: {
-          limit: 25000
+          limit: 2500000
         },
       },
       {

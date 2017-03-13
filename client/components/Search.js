@@ -1,16 +1,32 @@
 import React from 'react'
+import elasticSearchClient from '../services/ElasticSearch'
+const { string } = React.PropTypes
 
 const Search = React.createClass({
+  propTypes: {
+    searchTerm: string
+  },
+  getInitialState () {
+    return {
+      searchData: {}
+    }
+  },
+  componentDidMount () {
+    elasticSearchClient.search({
+      q: this.props.searchTerm
+    }).then((response) => {
+      this.setState({searchData: response.hits})
+    }).catch((error) => {
+      console.trace(error.message)
+    })
+  },
   render () {
     return (
-      <div className='parent-center landing'>
-        <div className='container'>
-          <div className='row margin-top-20-p'>
-            <div className='col-md-12'>
-              <input type='search' className='form-control' placeholder='Type your favorite musician.' />
-            </div>
-          </div>
-        </div>
+      <div>
+        {/* TODO: Header comes here */}
+        <pre><code>You searched for "{this.props.searchTerm}" <br />
+          {JSON.stringify(this.state.searchData, null, 4)}
+        </code></pre>
       </div>
     )
   }

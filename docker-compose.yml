@@ -12,6 +12,8 @@ services:
       - xpack.security.authc.anonymous.roles=read_music
       - xpack.security.authc.anonymous.authz_exception=false
       - xpack.security.enabled=false
+      - http.cors.enabled=true
+      - http.cors.allow-origin=*
     ulimits:
       memlock:
         soft: -1
