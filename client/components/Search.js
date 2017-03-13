@@ -1,10 +1,5 @@
 import React from 'react'
-import ElasticSearch from 'elasticsearch'
-
-const client = new ElasticSearch.Client({
-  host: 'localhost:9200',
-  log: 'trace'
-})
+import elasticSearchClient from '../services/ElasticSearch'
 
 const Search = React.createClass({
   getInitialState () {
@@ -13,7 +8,7 @@ const Search = React.createClass({
     }
   },
   componentDidMount () {
-    client.search({
+    elasticSearchClient.search({
       q: 'mozart'
     }).then((response) => {
       this.setState({searchData: response.hits})
@@ -23,7 +18,10 @@ const Search = React.createClass({
   },
   render () {
     return (
-      <pre><code>{JSON.stringify(this.state.searchData, null, 4)}</code></pre>
+      <div>
+        {/* TODO: Header comes here */}
+        <pre><code>{JSON.stringify(this.state.searchData, null, 4)}</code></pre>
+      </div>
     )
   }
 })

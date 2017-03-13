@@ -9,7 +9,7 @@ If everything is on track, in the project directory, run `yarn start`. This shou
 
 To start the elasticsearch server, run `docker-compose up` in the project directory. (`docker-compose down` to stop the server)
 
-To project to function properly, both elasticsearch server AND the webpack-dev-server have to run simultaneously, ideally in seperate terminal windows.
+For this project to function properly, both elasticsearch server AND the webpack-dev-server have to run simultaneously, ideally in seperate terminal windows.
 
 ## Setup
 
