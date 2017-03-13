@@ -5,9 +5,11 @@ In this repository we will build a visualization of the other teams aggregated d
 
 ## Run Project
 
-If everything is on track, in the project directory, run `yarn start`. This should start the webpack-dev-server and you should see the initial page with **Hello World** when you browse to http://localhost:8080
+If everything is on track, in the project directory, run `yarn start`. This should start the webpack-dev-server and you should see the landing page with search bar when you browse to `http://localhost:8080`.
 
 To start the elasticsearch server, run `docker-compose up` in the project directory. (`docker-compose down` to stop the server)
+
+To project to function properly, both elasticsearch server AND the webpack-dev-server have to run simultaneously, ideally in seperate terminal windows.
 
 ## Setup
 
