@@ -12,7 +12,12 @@ const App = React.createClass({
       <BrowserRouter>
         <div className='app'>
           <Match exactly pattern='/' component={Landing} />
-          <Match pattern='/search' component={Search} />
+          <Match
+            pattern='/search/:query'
+            component={(props) => {
+              return <Search searchTerm={props.params.query} />
+            }}
+          />
         </div>
       </BrowserRouter>
     )

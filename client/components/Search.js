@@ -1,7 +1,11 @@
 import React from 'react'
 import elasticSearchClient from '../services/ElasticSearch'
+const { string } = React.PropTypes
 
 const Search = React.createClass({
+  propTypes: {
+    searchTerm: string
+  },
   getInitialState () {
     return {
       searchData: {}
@@ -9,7 +13,7 @@ const Search = React.createClass({
   },
   componentDidMount () {
     elasticSearchClient.search({
-      q: 'mozart'
+      q: this.props.searchTerm
     }).then((response) => {
       this.setState({searchData: response.hits})
     }).catch((error) => {
@@ -20,7 +24,9 @@ const Search = React.createClass({
     return (
       <div>
         {/* TODO: Header comes here */}
-        <pre><code>{JSON.stringify(this.state.searchData, null, 4)}</code></pre>
+        <pre><code>You searched for "{this.props.searchTerm}" <br />
+          {JSON.stringify(this.state.searchData, null, 4)}
+        </code></pre>
       </div>
     )
   }

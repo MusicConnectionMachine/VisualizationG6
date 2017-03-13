@@ -16,6 +16,7 @@ module.exports = {
     filename: 'bundle.js'
   },
   devServer: {
+    publicPath: '/public/',
     historyApiFallback: true
   },
   resolve: {
@@ -59,7 +60,7 @@ module.exports = {
         test: /\.(jpg|png|svg|jpeg)$/,
         loader: 'url-loader',
         options: {
-          limit: 25000
+          limit: 2500000
         },
       },
       {
