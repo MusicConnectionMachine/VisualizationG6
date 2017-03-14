@@ -1,6 +1,23 @@
 .searchResult {
-  //margin-top: 5pt;
+  background-color: $flat-clouds;
   //display: flex;
+  //justify-content: center;
+  align-items: center;
+  min-height: 30pt;
+  margin-bottom: 2pt;
+  padding-bottom: 2pt;
+}
+
+.searchResult-icon {
+  //display: inline-block;
+  vertical-align: middle;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  //height: 100%;
+  font-size: 15pt;
+  margin: 5pt;
+  //width: 20pt;
 }
 
 .searchMessage {
@@ -11,7 +28,7 @@
   height: 40pt;
 }
 
-searchResult additional-info {
+additional-info {
   //font-weight: bold;
   color: $flat-asbestos;
 }

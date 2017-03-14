@@ -1,6 +1,7 @@
 import React from 'react'
 import elasticSearchClient from '../services/ElasticSearch'
 import Searchbar from './Searchbar'
+import SearchResult from './SearchResult'
 const { string } = React.PropTypes
 const numberOfResults = 12
 
@@ -38,7 +39,7 @@ export default class Search extends React.Component {
     // if (this.props.searchTerm === undefined || this.props.searchTerm === null || this.props.searchTerm === '') {
     //   this.context.router.transitionTo('/')
     // }
-    this.setState({searchState: 'loading', oldSearch: this.props.searchTerm, from: from})
+    this.setState({searchState: 'loading', oldSearch: this.props.searchTerm, from: from, totalResults: 0})
 
     elasticSearchClient.search({
       q: this.props.searchTerm,
@@ -97,11 +98,12 @@ export default class Search extends React.Component {
         break
       case 'done':
         var i = 0
-        body = (
-          <div className='list-group'>
-            {this.state.searchResult.map(data => (<SearchResult key={i++} myData={data} />))}
-          </div>
-        )
+        body = this.state.searchResult.map(data => (<SearchResult key={i++} myData={data} />))
+        // body = (
+        //   <div className='list-group'>
+        //     {this.state.searchResult.map(data => (<SearchResult key={i++} myData={data} />))}
+        //   </div>
+        // )
         footer = (
           <nav aria-label='Page navigation'>
             <div className='btn-group btn-group-justified' role='group'>
@@ -142,37 +144,4 @@ export default class Search extends React.Component {
       </div>
     )
   }
-}
-
-function SearchResult (props) {
-  var myData = props.myData
-  var type = myData._type
-  var dbEntry = myData._source
-
-  if (type === 'composition') {
-    var composer = dbEntry.Composer || ' '
-    var style = dbEntry['Piece Style'] || ' '
-    var title = dbEntry['Work Title'] || ' '
-    var date = dbEntry['Year/Date of Composition'] || ' '
-
-    return (
-      <button className='list-group-item'>
-        <div className='container'>
-          <div className='row'>
-            <div className='col-xs-12 col-md-6'><strong>{title} </strong></div>
-            <div className='col-xs-12 col-md-6'>{composer} </div>
-            <div className='col-xs-6 '><small>{date} </small></div>
-            <div className='col-xs-6 additional-info'><small>{style} </small></div>
-          </div>
-        </div>
-      </button>
-    )
-  }
-  return (
-    <div className='row'>Could not display result</div>
-  )
-}
-
-SearchResult.propTypes = {
-  myData: React.PropTypes.object
 }
