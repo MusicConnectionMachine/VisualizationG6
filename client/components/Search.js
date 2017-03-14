@@ -2,43 +2,50 @@ import React from 'react'
 import elasticSearchClient from '../services/ElasticSearch'
 import Searchbar from './Searchbar'
 const { string } = React.PropTypes
+const numberOfResults = 12
 
 export default class Search extends React.Component {
 
   constructor () {
     super()
 
+    this.nextResults = this.nextResults.bind(this)
+    this.lastResults = this.lastResults.bind(this)
+
     this.state = {
-      searchResult: [
-        1,
-        2,
-        43
-      ],
+      searchResult: [],
       searchState: 'none',
-      oldSearch: ''
+      oldSearch: '',
+      totalResults: 0,
+      from: 0
     }
   }
 
   static get propTypes () {
-    return {searchTerm: string}
+    return {
+      searchTerm: string,
+      from: React.PropTypes.number,
+      to: React.PropTypes.number
+    }
   }
 
   componentDidMount () {
-    this.queryDatabse()
+    this.queryDatabse(0)
   }
-  //
-  // componentWillReceiveProps (nextProps) {
-  //   if (JSON.stringify(this.props.searchTerm) !== JSON.stringify(nextProps.searchTerm)) {
-  //     this.updateUser()
-  //   }
-  // }
 
-  queryDatabse () {
-    this.setState({searchState: 'loading', oldSearch: this.props.searchTerm})
+  queryDatabse (from) {
+    // console.log(this.props.searchTerm)
+    // if (this.props.searchTerm === undefined || this.props.searchTerm === null || this.props.searchTerm === '') {
+    //   this.context.router.transitionTo('/')
+    // }
+    this.setState({searchState: 'loading', oldSearch: this.props.searchTerm, from: from})
+
     elasticSearchClient.search({
-      q: this.props.searchTerm
+      q: this.props.searchTerm,
+      from: from,
+      size: numberOfResults
     }).then((response) => {
-      this.parseResult(response.hits)
+      this.parseResult(response)
     }).catch((error) => {
       this.setState({searchState: 'error'})
       console.trace(error.message)
@@ -46,10 +53,9 @@ export default class Search extends React.Component {
   }
 
   parseResult (result) {
-    if (result.hits) {
-      // console.log(result)
-      if (result.total > 0) {
-        this.setState({searchResult: result.hits, searchState: 'done'})
+    if (result.hits && result.hits.hits) {
+      if (result.hits.total > 0) {
+        this.setState({searchResult: result.hits.hits, searchState: 'done', totalResults: result.hits.total})
       } else {
         this.setState({searchState: 'nothing'})
       }
@@ -58,34 +64,60 @@ export default class Search extends React.Component {
     }
   }
 
+  nextResults (event) {
+    this.queryDatabse(this.state.from + numberOfResults)
+  }
+
+  lastResults (event) {
+    this.queryDatabse(this.state.from - numberOfResults)
+  }
+
   render () {
-    var body
+    var body, footer
 
     if (this.state.oldSearch !== this.props.searchTerm) {
-      this.queryDatabse()
+      this.queryDatabse(0)
     }
 
     switch (this.state.searchState) {
       case 'loading':
         body = (
-          <div>loading</div>
+          <div className='searchMessage'>Loading...</div>
         )
         break
       case 'error':
         body = (
-          <div>An error has occured, please try again</div>
+          <div className='searchMessage'>An error has occured, please try again</div>
         )
         break
       case 'nothing':
         body = (
-          <div>Sorry nothing found</div>
+          <div className='searchMessage'>Sorry, we could not find anything for: {this.props.searchTerm}</div>
         )
         break
       case 'done':
         var i = 0
-        body = this.state.searchResult.map(data => (
-          <SearchResult key={i++} myData={data} />
-          )
+        body = (
+          <div className='list-group'>
+            {this.state.searchResult.map(data => (<SearchResult key={i++} myData={data} />))}
+          </div>
+        )
+        footer = (
+          <nav aria-label='Page navigation'>
+            <div className='btn-group btn-group-justified' role='group'>
+              <div className='btn-group' role='group'>
+                <button type='button' className='btn btn-default' aria-label='Last Results' onClick={this.lastResults} disabled={this.state.from <= 0}>
+                  <span className='glyphicon glyphicon-chevron-left' aria-hidden='true' /> {Math.max(this.state.from - numberOfResults + 1, 0)} - {Math.max(this.state.from, 0)}
+                </button>
+              </div>
+              <div className='btn-group' role='group'>
+                <button type='button' className='btn btn-default' aria-label='Next Results' onClick={this.nextResults} disabled={this.state.from + numberOfResults >= this.state.totalResults}>
+                  {Math.min(this.state.totalResults, this.state.from + numberOfResults + 1)} - {Math.min(this.state.totalResults, this.state.from + numberOfResults + numberOfResults)}
+                  <span className='glyphicon glyphicon-chevron-right' aria-hidden='true' />
+                </button>
+              </div>
+            </div>
+          </nav>
         )
         break
       default:
@@ -98,9 +130,15 @@ export default class Search extends React.Component {
           <Searchbar initSearchTerm={this.props.searchTerm} />
         </div>
 
-        <div className='margin-top-10-p'>
+        <div className=' margin-top-5-p'>
           {body}
+          <div className='text-right text-white'>
+            <small>{this.state.totalResults} Results</small>
+          </div>
+          {footer}
+          <div className='margin-bottom-5-p' />
         </div>
+
       </div>
     )
   }
@@ -118,12 +156,16 @@ function SearchResult (props) {
     var date = dbEntry['Year/Date of Composition'] || ' '
 
     return (
-      <div className='row searchResult'>
-        <div className='col-xs-12 col-md-6'><strong>{title} </strong></div>
-        <div className='col-xs-12 col-md-6'>{composer} </div>
-        <div className='col-xs-6 '><small>{date} </small></div>
-        <div className='col-xs-6 additional-info'><small>{style} </small></div>
-      </div>
+      <button className='list-group-item'>
+        <div className='container'>
+          <div className='row'>
+            <div className='col-xs-12 col-md-6'><strong>{title} </strong></div>
+            <div className='col-xs-12 col-md-6'>{composer} </div>
+            <div className='col-xs-6 '><small>{date} </small></div>
+            <div className='col-xs-6 additional-info'><small>{style} </small></div>
+          </div>
+        </div>
+      </button>
     )
   }
   return (

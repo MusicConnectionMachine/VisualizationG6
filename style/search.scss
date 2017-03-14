@@ -1,7 +1,14 @@
 .searchResult {
+  //margin-top: 5pt;
+  //display: flex;
+}
+
+.searchMessage {
   background-color: $flat-clouds;
-  margin-top: 3pt;
   display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40pt;
 }
 
 searchResult additional-info {
