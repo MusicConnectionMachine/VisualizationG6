@@ -21,14 +21,6 @@ export default class Search extends React.Component {
     }
   }
 
-  static get propTypes () {
-    return {
-      searchTerm: React.PropTypes.string,
-      from: React.PropTypes.number,
-      to: React.PropTypes.number
-    }
-  }
-
   componentDidMount () {
     this.queryDatabse(0)
   }
@@ -134,4 +126,10 @@ export default class Search extends React.Component {
       </div>
     )
   }
+}
+
+Search.propTypes = {
+  searchTerm: React.PropTypes.string,
+  from: React.PropTypes.number,
+  to: React.PropTypes.number
 }

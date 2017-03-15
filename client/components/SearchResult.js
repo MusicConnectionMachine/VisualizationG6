@@ -2,12 +2,6 @@ import React from 'react'
 
 export default class SearchResult extends React.Component {
 
-  static get propTypes () {
-    return {
-      myData: React.PropTypes.object
-    }
-  }
-
   render () {
     var myData = this.props.myData
     var type = myData._type
@@ -49,4 +43,8 @@ export default class SearchResult extends React.Component {
       <div className='row searchMessage'>Could not display result for {type}</div>
     )
   }
+}
+
+SearchResult.propTypes = {
+  myData: React.PropTypes.object
 }
