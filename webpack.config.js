@@ -51,7 +51,7 @@ module.exports = {
           {
             loader: 'css-loader',
             options: {
-              url: false
+              url: true
             }
           }
         ]
@@ -76,6 +76,10 @@ module.exports = {
           loader: "sass-loader"
           }
         ]
+      },
+      {
+        test: /\.(eot|svg|ttf|woff|woff2)$/,
+        loader: 'file-loader?name=[name].[ext]&publicPath=/public/'
       }
     ]
   },
