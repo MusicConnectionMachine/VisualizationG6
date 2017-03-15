@@ -5,12 +5,6 @@ import Comments from './Comments'
 import elasticSearchClient from '../../services/ElasticSearch'
 
 export default class DetailPage extends React.Component {
-  static get propTypes () {
-    return {
-      type: React.PropTypes.string,
-      id: React.PropTypes.string
-    }
-  }
 
   constructor (props) {
     super(props)
@@ -49,13 +43,13 @@ export default class DetailPage extends React.Component {
   render () {
     if (this.state.loading === 'error') {
       return (
-        <div className='parent-center'>
+        <div className='searchMessage margin-top-20-p'>
           Could not display results. Please try again.
         </div>
       )
     } else if (this.state.loading === 'loading') {
       return (
-        <div className='parent-center'>Loading...</div>
+        <div className='searchMessage margin-top-20-p'>Loading...</div>
       )
     }
     var title
@@ -65,9 +59,9 @@ export default class DetailPage extends React.Component {
     return (
       <div className='container'>
         <h1 className='margin-top-10-p text-white'>
-          <a href='javascript:history.back()'> <span className='glyphicon glyphicon-circle-arrow-left' /> </a>{title}
+          <a href='javascript:history.back()'><span className='glyphicon glyphicon-circle-arrow-left text-white' /></a> {title}
         </h1>
-        <div className='row margin-top-10-p'>
+        <div className='row margin-top-5-p'>
           <RelationshipGraph type={this.props.type} id={this.props.id} myData={this.state.myData} />
         </div>
         <div className='row'>
@@ -79,4 +73,9 @@ export default class DetailPage extends React.Component {
       </div>
     )
   }
+}
+
+DetailPage.propTypes = {
+  type: React.PropTypes.string,
+  id: React.PropTypes.string
 }

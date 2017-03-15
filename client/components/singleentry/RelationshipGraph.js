@@ -1,13 +1,6 @@
 import React from 'react'
 
 export default class RelationshipGraph extends React.Component {
-  static get propTypes () {
-    return {
-      type: React.PropTypes.string,
-      id: React.PropTypes.string,
-      myData: React.PropTypes.object
-    }
-  }
 
   render () {
     return (
@@ -16,4 +9,10 @@ export default class RelationshipGraph extends React.Component {
       </div>
     )
   }
+}
+
+RelationshipGraph.propTypes = {
+  type: React.PropTypes.string,
+  id: React.PropTypes.string,
+  myData: React.PropTypes.object
 }

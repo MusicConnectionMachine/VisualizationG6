@@ -2,6 +2,18 @@ import React from 'react'
 
 export default class SearchResult extends React.Component {
 
+  constructor (props) {
+    super(props)
+    this.clickHandler = this.clickHandler.bind(this)
+  }
+
+  clickHandler (event) {
+    event.preventDefault()
+    console.log(this)
+    var myData = this.props.myData
+    this.context.router.transitionTo('/details/' + myData._type + '/' + myData._id)
+  }
+
   render () {
     var myData = this.props.myData
     var type = myData._type
@@ -14,7 +26,7 @@ export default class SearchResult extends React.Component {
       var date = dbEntry['Year/Date of Composition'] || ' '
 
       return (
-        <div className='searchResult'>
+        <div className='searchResult' role='button' onClick={this.clickHandler}>
           <table>
             <tr>
               <td>
@@ -47,4 +59,8 @@ export default class SearchResult extends React.Component {
 
 SearchResult.propTypes = {
   myData: React.PropTypes.object
+}
+
+SearchResult.contextTypes = {
+  router: React.PropTypes.object
 }
