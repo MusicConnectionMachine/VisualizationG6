@@ -1,6 +1,5 @@
 import React from 'react'
-const {object} = React.PropTypes
-const { string } = React.PropTypes
+const { object, string } = React.PropTypes
 
 const Searchbar = React.createClass({
   propTypes: {

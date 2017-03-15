@@ -2,7 +2,6 @@ import React from 'react'
 import elasticSearchClient from '../services/ElasticSearch'
 import Searchbar from './Searchbar'
 import SearchResult from './SearchResult'
-const { string } = React.PropTypes
 const numberOfResults = 12
 
 export default class Search extends React.Component {
@@ -24,7 +23,7 @@ export default class Search extends React.Component {
 
   static get propTypes () {
     return {
-      searchTerm: string,
+      searchTerm: React.PropTypes.string,
       from: React.PropTypes.number,
       to: React.PropTypes.number
     }
@@ -35,10 +34,6 @@ export default class Search extends React.Component {
   }
 
   queryDatabse (from) {
-    // console.log(this.props.searchTerm)
-    // if (this.props.searchTerm === undefined || this.props.searchTerm === null || this.props.searchTerm === '') {
-    //   this.context.router.transitionTo('/')
-    // }
     this.setState({searchState: 'loading', oldSearch: this.props.searchTerm, from: from, totalResults: 0})
 
     elasticSearchClient.search({
@@ -99,11 +94,6 @@ export default class Search extends React.Component {
       case 'done':
         var i = 0
         body = this.state.searchResult.map(data => (<SearchResult key={i++} myData={data} />))
-        // body = (
-        //   <div className='list-group'>
-        //     {this.state.searchResult.map(data => (<SearchResult key={i++} myData={data} />))}
-        //   </div>
-        // )
         footer = (
           <nav aria-label='Page navigation'>
             <div className='btn-group btn-group-justified' role='group'>

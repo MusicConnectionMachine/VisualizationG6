@@ -77,25 +77,6 @@ module.exports = {
           }
         ]
       },
-      // {
-      //   include: path.resolve(__dirname, 'client'),
-      //   test: /\.woff$/,
-      //   loader: "url-loader?limit=10000&mimetype=application/font-woff&name=[path][name].[ext]"
-      // }, {
-      //   test: /\.woff2$/,
-      //   loader: "url-loader?limit=10000&mimetype=application/font-woff2&name=[path][name].[ext]"
-      // }, {
-      //   test: /\.(eot|ttf)$/,
-      //   loader: "file-loader"
-      // }
-      // {
-      //   test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
-      //   loader: "url-loader?limit=10000&mimetype=application/font-woff"
-      // },
-      // {
-      //   test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
-      //   s
-      // }
       {
         test: /\.(eot|svg|ttf|woff|woff2)$/,
         loader: 'file-loader?name=[name].[ext]&publicPath=/public/'
