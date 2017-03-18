@@ -1,12 +1,5 @@
 const path = require('path')
 
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
-  template: './index.html',
-  filename: 'index.html',
-  inject: 'body'
-})
-
 module.exports = {
   context: __dirname,
   entry: './client/App.js',
@@ -82,6 +75,5 @@ module.exports = {
         loader: 'file-loader?name=[name].[ext]&publicPath=/public/'
       }
     ]
-  },
-  plugins: [HtmlWebpackPluginConfig]
+  }
 }

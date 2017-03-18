@@ -3,6 +3,10 @@
 
 In this repository we will build a visualization of the other teams aggregated data
 
+## Demo
+
+You can checkout the project throughout the development phase on [here](http://visualization-g6.surge.sh/).
+
 ## Run Project
 
 If everything is on track, in the project directory, run `yarn start`. This should start the webpack-dev-server and you should see the landing page with search bar when you browse to `http://localhost:8080`.
