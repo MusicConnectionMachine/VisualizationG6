@@ -5,7 +5,7 @@ In this repository we will build a visualization of the other teams aggregated d
 
 ## Demo
 
-You can checkout the project throughout the development phase on [here](http://visualization-g6.surge.sh/).
+You can checkout the project throughout the development phase [here](http://visualization-g6.surge.sh/).
 
 ## Run Project
 
