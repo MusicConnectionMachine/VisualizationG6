@@ -20,39 +20,25 @@ export default class SearchResult extends React.Component {
     var dbEntry = myData._source
 
     if (type === 'composition') {
-      var composer = dbEntry.Composer || ' '
-      var style = dbEntry['Piece Style'] || ' '
-      var title = dbEntry['Work Title'] || ' '
-      var date = dbEntry['Year/Date of Composition'] || ' '
+      var composer = dbEntry.Composer || 'Unknown'
+      var style = dbEntry['Piece Style'] || 'Unknown'
+      var title = dbEntry['Work Title'] || 'Unknown'
+      var date = dbEntry['Year/Date of Composition'] || 'Unknown'
 
       return (
-        <div className='searchResult' role='button' onClick={this.clickHandler}>
-          <table>
-            <tr>
-              <td>
-                <span className='glyphicon glyphicon-cd searchResult-icon' />
-              </td>
-              <td>
-                <div className='container'>
-                  <div className='row align-items-center'>
-                    <div className='col-sm-5'><strong>{title} </strong></div>
-                    <div className='col-sm-7'>{composer} </div>
-                    <div className='col-xs-6 col-sm-5 additional-info'>
-                      <small>{date} </small>
-                    </div>
-                    <div className='col-xs-6 col-sm-7 additional-info'>
-                      <small>{style} </small>
-                    </div>
-                  </div>
-                </div>
-              </td>
-            </tr>
-          </table>
-        </div>
+        <tr className='animated fadeIn' onClick={this.clickHandler}>
+          <th scope='row'>
+            <span className='glyphicon glyphicon-cd searchResult-icon' />
+          </th>
+          <td><strong>{title}</strong></td>
+          <td>{composer}</td>
+          <td>{style}</td>
+          <td>{date}</td>
+        </tr>
       )
     }
     return (
-      <div className='row searchMessage'>Could not display result for {type}</div>
+      <div className='row no-results'>Could not display result for {type}</div>
     )
   }
 }

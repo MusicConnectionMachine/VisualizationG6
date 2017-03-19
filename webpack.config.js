@@ -58,10 +58,7 @@ module.exports = {
       },
       {
         test: /\.(jpg|png|svg|jpeg)$/,
-        loader: 'url-loader',
-        options: {
-          limit: 2500000
-        },
+        loader: 'url-loader'
       },
       {
         test: /\.scss$/,
@@ -78,8 +75,8 @@ module.exports = {
         ]
       },
       {
-        test: /\.(eot|svg|ttf|woff|woff2)$/,
-        loader: 'file-loader?name=[name].[ext]&publicPath=/public/'
+        test: /\.(eot|ttf|woff|woff2)$/,
+        loader: 'file-loader?name=[name].[ext]&publicPath=/public/fonts/'
       }
     ]
   },
