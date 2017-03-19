@@ -2,6 +2,7 @@ import React from 'react'
 import elasticSearchClient from '../services/ElasticSearch'
 import Searchbar from './Searchbar'
 import SearchResult from './SearchResult'
+import Spinner from 'react-spinkit'
 const numberOfResults = 12
 
 export default class Search extends React.Component {
@@ -61,7 +62,7 @@ export default class Search extends React.Component {
   }
 
   render () {
-    var body, footer
+    let tableBody, tableFooter
 
     if (this.state.oldSearch !== this.props.searchTerm) {
       this.queryDatabse(0)
@@ -69,24 +70,26 @@ export default class Search extends React.Component {
 
     switch (this.state.searchState) {
       case 'loading':
-        body = (
-          <div className='searchMessage'>Loading...</div>
+        tableBody = (
+          <div className='parent-center'>
+            <Spinner spinnerName='double-bounce' />
+          </div>
         )
         break
       case 'error':
-        body = (
-          <div className='searchMessage'>An error has occured, please try again</div>
+        tableBody = (
+          <div className='search-error'>An error has occured, please try again</div>
         )
         break
       case 'nothing':
-        body = (
-          <div className='searchMessage'>Sorry, we could not find anything for: {this.props.searchTerm}</div>
+        tableBody = (
+          <div className='search-error'>Sorry, we could not find anything for: {this.props.searchTerm}</div>
         )
         break
       case 'done':
         var i = 0
-        body = this.state.searchResult.map(data => (<SearchResult key={i++} myData={data} />))
-        footer = (
+        tableBody = this.state.searchResult.map(data => (<SearchResult key={i++} myData={data} />))
+        tableFooter = (
           <nav aria-label='Page navigation'>
             <div className='btn-group btn-group-justified' role='group'>
               <div className='btn-group' role='group'>
@@ -114,12 +117,25 @@ export default class Search extends React.Component {
           <Searchbar initSearchTerm={this.props.searchTerm} />
         </div>
 
-        <div className=' margin-top-5-p'>
-          {body}
-          <div className='text-right text-white'>
+        <div className='margin-top-5-p'>
+          <table className='table animated fadeIn'>
+            <thead>
+              <tr>
+                <th>Type</th>
+                <th>Work Title</th>
+                <th>Composer</th>
+                <th>Style</th>
+                <th>Date</th>
+              </tr>
+            </thead>
+            <tbody>
+              {tableBody}
+            </tbody>
+          </table>
+          <div className='text-right margin-bottom-10-px'>
             <small>{this.state.totalResults} Results</small>
           </div>
-          {footer}
+          {tableFooter}
           <div className='margin-bottom-5-p' />
         </div>
 

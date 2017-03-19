@@ -1,7 +1,5 @@
 .searchResult {
   background-color: $flat-clouds;
-  //display: flex;
-  //justify-content: center;
   align-items: center;
   min-height: 30pt;
   margin-bottom: 2pt;
@@ -9,26 +7,29 @@
 }
 
 .searchResult-icon {
-  //display: inline-block;
-  vertical-align: middle;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  //height: 100%;
   font-size: 15pt;
-  margin: 5pt;
-  //width: 20pt;
 }
 
 .searchMessage {
-  background-color: $flat-clouds;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 40pt;
 }
 
-additional-info {
-  //font-weight: bold;
-  color: $flat-asbestos;
+.search-error {
+  margin-top: 20px;
+  margin-left: 8px;
+}
+/* Table of search results in the search component */
+
+table {
+  color: $flat-midnight-blue;
+  thead {
+    font-family: 'League Gothic' !important;
+    font-size: 23px;
+  }
+  tr {
+    cursor: pointer;
+  }
 }

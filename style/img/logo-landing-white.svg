@@ -1,0 +1,48 @@
+<svg width="771px" height="152px" viewBox="0 0 771 152" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Logo Header</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="MusicConnectionMachine" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Desktop-HD" transform="translate(-328.000000, -139.000000)">
+            <g id="Logo-Header" transform="translate(328.000000, 134.000000)">
+                <g id="Logo-Down" transform="translate(247.000000, 128.000000)">
+                    <path d="M43,20 C43,20 43.4557831,20 43.9942016,20 L192.5,20" id="Line" stroke="#34495E" stroke-width="2" stroke-linecap="square"></path>
+                    <circle id="Oval-1-Copy-2" stroke="#ECF0F1" fill="#C0392B" cx="44" cy="20" r="5"></circle>
+                    <circle id="Oval-1-Copy-3" stroke="#ECF0F1" fill="#C0392B" cx="193" cy="19" r="5"></circle>
+                    <text id="All" font-family="LeagueGothic-Regular, League Gothic" font-size="30" font-weight="normal" fill="#34495E">
+                        <tspan x="0.96" y="29">All</tspan>
+                    </text>
+                    <text id="Connected" font-family="LeagueGothic-Regular, League Gothic" font-size="30" font-weight="normal" fill="#34495E">
+                        <tspan x="214.905" y="28">Connected</tspan>
+                    </text>
+                </g>
+                <g id="Logo-Up" transform="translate(121.000000, 0.000000)">
+                    <circle id="Oval-1" stroke="#ECF0F1" fill="#C0392B" cx="179" cy="20" r="5"></circle>
+                    <circle id="Oval-1-Copy" stroke="#ECF0F1" fill="#C0392B" cx="378" cy="20" r="5"></circle>
+                    <text id="Every-Recording" font-family="LeagueGothic-Regular, League Gothic" font-size="30" font-weight="normal" fill="#34495E">
+                        <tspan x="0.21" y="28">Every Recording</tspan>
+                    </text>
+                    <text id="Every-Book" font-family="LeagueGothic-Regular, League Gothic" font-size="30" font-weight="normal" fill="#34495E">
+                        <tspan x="228.045" y="29">Every Book</tspan>
+                    </text>
+                    <text id="Every-Score" font-family="LeagueGothic-Regular, League Gothic" font-size="30" font-weight="normal" fill="#34495E">
+                        <tspan x="441.465" y="29">Every Score</tspan>
+                    </text>
+                </g>
+                <g id="Logo-Text-and-Icon" transform="translate(0.000000, 40.000000)">
+                    <text id="Music-Connection-Mac" font-family="LeagueGothic-Regular, League Gothic" font-size="74" font-weight="normal" fill="#1ABC9C">
+                        <tspan x="119" y="69">Music Connection Machine</tspan>
+                    </text>
+                    <g id="Page-1" style="mix-blend-mode: lighten;" transform="translate(0.000000, 2.000000)" fill="#34495E">
+                        <path d="M17.441,75.93 L15.1402,73.6253 C14.86286,73.34796 14.46051,73.24249 14.0855,73.34405 C11.4058,74.07061 7.5777,75.57065 4.5621,78.59405 C-1.258201,84.42995 -0.328501,87.80885 1.4762,89.61705 C2.39808,90.54283 3.4957,91.01155 4.7418,91.01155 C6.941,91.01155 9.4723,89.54275 12.4801,86.52715 C15.4996,83.50375 16.9957,79.66775 17.7184,76.98415 C17.82387,76.60524 17.7184,76.2029 17.44106,75.92945 L17.441,75.93 Z" id="Fill-1"></path>
+                        <path d="M87.445,1.543 C87.45281,1.53519 87.46453,1.53519 87.47234,1.52738 C87.48797,1.50784 87.49578,1.48831 87.51141,1.46878 C88.10516,0.87112 89.01921,0.81644 89.53871,1.33987 C90.06215,1.86331 90.00746,2.77737 89.41371,3.37507 C89.39418,3.3907 89.37464,3.39851 89.35511,3.41413 C89.3473,3.42195 89.3473,3.43367 89.34339,3.44148 L19.5734,74.60548 C19.48355,74.69532 19.37028,74.75392 19.25309,74.75782 C19.1359,74.76954 19.02653,74.72657 18.9484,74.64454 L16.4172,72.10934 C16.33907,72.03512 16.30001,71.92184 16.30782,71.80465 C16.31563,71.68356 16.37032,71.56637 16.46016,71.48434 L87.445,1.543 Z" id="Fill-2"></path>
+                    </g>
+                    <g id="Page-1-Copy" style="mix-blend-mode: lighten;" transform="translate(798.000000, 48.000000) scale(1, -1) translate(-798.000000, -48.000000) translate(753.000000, 2.000000)">
+                        <path d="M17.441,75.93 L15.1402,73.6253 C14.86286,73.34796 14.46051,73.24249 14.0855,73.34405 C11.4058,74.07061 7.5777,75.57065 4.5621,78.59405 C-1.258201,84.42995 -0.328501,87.80885 1.4762,89.61705 C2.39808,90.54283 3.4957,91.01155 4.7418,91.01155 C6.941,91.01155 9.4723,89.54275 12.4801,86.52715 C15.4996,83.50375 16.9957,79.66775 17.7184,76.98415 C17.82387,76.60524 17.7184,76.2029 17.44106,75.92945 L17.441,75.93 Z" id="Fill-1" fill-opacity="0.00999999978" fill="#FFFFFF"></path>
+                        <path d="M87.445,1.543 C87.45281,1.53519 87.46453,1.53519 87.47234,1.52738 C87.48797,1.50784 87.49578,1.48831 87.51141,1.46878 C88.10516,0.87112 89.01921,0.81644 89.53871,1.33987 C90.06215,1.86331 90.00746,2.77737 89.41371,3.37507 C89.39418,3.3907 89.37464,3.39851 89.35511,3.41413 C89.3473,3.42195 89.3473,3.43367 89.34339,3.44148 L19.5734,74.60548 C19.48355,74.69532 19.37028,74.75392 19.25309,74.75782 C19.1359,74.76954 19.02653,74.72657 18.9484,74.64454 L16.4172,72.10934 C16.33907,72.03512 16.30001,71.92184 16.30782,71.80465 C16.31563,71.68356 16.37032,71.56637 16.46016,71.48434 L87.445,1.543 Z" id="Fill-2"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

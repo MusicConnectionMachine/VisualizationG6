@@ -1,23 +1,28 @@
 .searchbar {
 
   form {
-    width: 100%;
+    width: 68%;
     margin-left: 10pt;
     margin-right: 10pt;
   }
 
   input {
+    font: 45px 'League Gothic';
     border-bottom: solid 1px #ccc !important;
-    background: none;
+    background: url('./img/search-icon-white.svg');
+    background-position: right;
+    background-repeat: no-repeat;
     border: none;
     box-shadow: none !important;
-    font-size: 30px;
     height: 60px;
     border-radius: 0px;
     outline: none;
-    color: $flat-gray-1;
+    color: $flat-midnight-blue;
   }
 
+  /*
+   * TODO: Integrate postcss/autoprefixer
+   */
   ::-webkit-input-placeholder { /* Chrome */
     color: $flat-gray-2;
     opacity: 0.6;

@@ -22,7 +22,7 @@ const Searchbar = React.createClass({
   },
   render () {
     return (
-      <div className='parent-center searchbar'>
+      <div className='parent-center searchbar animated fadeIn'>
         <form onSubmit={this.handleSearchSubmit}>
           <input onChange={this.handleSearchTermChange} type='search' className='form-control'
             placeholder='Type your favorite musician.' value={this.state.searchTerm} />
