@@ -9,8 +9,6 @@ export default class DetailPage extends React.Component {
   constructor (props) {
     super(props)
 
-    console.log(props)
-
     this.state = {
       myData: '',
       loading: 'loading'
@@ -58,9 +56,11 @@ export default class DetailPage extends React.Component {
     }
     return (
       <div className='container'>
-        <h1 className='margin-top-10-p text-white'>
-          <a href='javascript:history.back()'><span className='glyphicon glyphicon-circle-arrow-left text-white' /></a> {title}
-        </h1>
+        <div className='margin-top-10-p row'>
+          <h1>
+            <a href='javascript:history.back()'><span className='glyphicon glyphicon-circle-arrow-left' /></a> {title}
+          </h1>
+        </div>
         <div className='row margin-top-5-p'>
           <RelationshipGraph type={this.props.type} id={this.props.id} myData={this.state.myData} />
         </div>
