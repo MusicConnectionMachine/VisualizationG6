@@ -17,13 +17,13 @@ export default class DetailTable extends React.Component {
     }
 
     if (props.myData['tags']) {
-      var i = 0
+      let mappingKey = 0
       entries.push({
         name: 'Tags',
         value: props.myData.tags.map(name => {
           var clickHandler = function () { this.context.router.transitionTo('/search/' + name) }.bind(this)
           return (
-            <span key={i++} onClick={clickHandler}><div className='label label-default'>{name}</div> </span>
+            <span key={mappingKey++} onClick={clickHandler}><div className='label label-default'>{name}</div> </span>
           )
         })
       })
@@ -35,7 +35,7 @@ export default class DetailTable extends React.Component {
   }
 
   render () {
-    var i = 0
+    let mappingKey = 0
     return (
       <div className='detailbox'>
         <table className='table table-hover'>
@@ -48,7 +48,7 @@ export default class DetailTable extends React.Component {
           </thead>
           <tbody>
             {this.state.entries.map(entry => (
-              <tr key={i++}>
+              <tr key={mappingKey++}>
                 <td>
                   {entry.name}
                 </td>
