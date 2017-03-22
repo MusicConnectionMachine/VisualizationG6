@@ -4,7 +4,7 @@ export default class RelationshipGraph extends React.Component {
 
   render () {
     return (
-      <div className='jumbotron'>
+      <div className='detailbox'>
         Placeholder for Graph {this.props.type} {this.props.id}
       </div>
     )

@@ -4,7 +4,7 @@ export default class Comments extends React.Component {
 
   render () {
     return (
-      <div className='jumbotron'>
+      <div className='detailbox'>
         Placeholder for Commenting {this.props.type} {this.props.id}
       </div>
     )
