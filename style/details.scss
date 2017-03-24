@@ -1,0 +1,16 @@
+.detailbox {
+  margin-bottom: 5pt;
+  background-color: #fff;
+  border-color: $flat-asbestos;
+  border-width: 0.5pt;
+  border-radius: 4pt;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  position: relative;
+  padding: 10pt 15pt 10pt 15pt;
+  border-style: solid;
+}
+
+.detailbox > table {
+  margin: 0pt;
+}

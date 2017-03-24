@@ -9,7 +9,6 @@ export default class SearchResult extends React.Component {
 
   clickHandler (event) {
     event.preventDefault()
-    console.log(this)
     var myData = this.props.myData
     this.context.router.transitionTo('/details/' + myData._type + '/' + myData._id)
   }
