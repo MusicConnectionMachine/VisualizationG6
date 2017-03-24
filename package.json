@@ -8,7 +8,7 @@
   "license": "MIT",
   "scripts": {
     "lint": "standard",
-    "build": "webpack --optimize-minimize --optimize-dedupe",
+    "build": "webpack --optimize-minimize",
     "start": "webpack-dev-server",
     "fix": "standard --fix",
     "deploy": "surge ./public"
