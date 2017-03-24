@@ -1,0 +1,17 @@
+sudo: required
+language: node_js
+node_js:
+  - "iojs"
+  - "node"
+cache:
+  yarn: true
+services:
+  - docker
+install:
+  - yarn build
+  - docker build -t rostlabazure/webpageg6:latest .
+after_success:
+  - if [ "$TRAVIS_BRANCH" == "develop" ]; then
+    docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD";
+    docker push rostlabazure/webpageg6:latest;
+    fi
