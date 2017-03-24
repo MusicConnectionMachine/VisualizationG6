@@ -1,7 +1,6 @@
 sudo: required
 language: node_js
 node_js:
-  - "iojs"
   - "node"
 cache:
   yarn: true
