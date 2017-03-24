@@ -9,11 +9,12 @@ services:
 before_install:
   - yarn global add webpack@v2.1.0-beta.25
   - yarn global add standard@v8.4.0
+  - yarn install
 install:
   - yarn build
   - docker build -t rostlabazure/webpageg6:latest .
 after_success:
-  - if [ "$TRAVIS_BRANCH" == "develop" ]; then
+  - if [ "$TRAVIS_BRANCH" == "develop" ] || [ "$TRAVIS_BRANCH" == "set-up-travis-ci" ]; then
     docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD";
     docker push rostlabazure/webpageg6:latest;
     fi
