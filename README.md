@@ -11,10 +11,6 @@ You can checkout the project throughout the development phase [here](http://visu
 
 If everything is on track, in the project directory, run `yarn start`. This should start the webpack-dev-server and you should see the landing page with search bar when you browse to `http://localhost:8080`.
 
-To start the elasticsearch server, run `docker-compose up` in the project directory. (`docker-compose down` to stop the server)
-
-For this project to function properly, both elasticsearch server AND the webpack-dev-server have to run simultaneously, ideally in seperate terminal windows.
-
 ## Setup
 
 In order get the project running, we need to some tools to be installed.
