@@ -14,9 +14,11 @@
   },
   "dependencies": {
     "html-webpack-plugin": "^2.28.0",
+    "leaflet": "^1.0.3",
     "path": "^0.12.7",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
+    "react-leaflet": "^1.1.4",
     "react-router": "4.0.0-alpha.5"
   },
   "devDependencies": {
