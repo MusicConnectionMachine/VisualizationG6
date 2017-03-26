@@ -8,7 +8,6 @@ export default class MapView extends React.Component {
       <Map center={position} zoom={13}>
         <TileLayer
           url='http://{s}.tile.osm.org/{z}/{x}/{y}.png'
-          attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
         />
         <Marker position={position}>
           <Popup>
