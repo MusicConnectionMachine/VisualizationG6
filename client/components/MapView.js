@@ -7,7 +7,7 @@ export default class MapView extends React.Component {
     return (
       <Map center={position} zoom={13}>
         <TileLayer
-          url='http://{s}.tile.osm.org/{z}/{x}/{y}.png'
+          url='https://api.mapbox.com/styles/v1/mapbox/streets-v10/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoieXNkZXZ5cyIsImEiOiJjajByMWljMncwMWp3MnFyeG5oNGdrNTltIn0.7bSRbrkT1zy3kYvXvWNgMw'
         />
         <Marker position={position}>
           <Popup>
