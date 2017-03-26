@@ -1,0 +1,20 @@
+sudo: required
+language: node_js
+node_js:
+  - "node"
+cache:
+  yarn: true
+services:
+  - docker
+before_install:
+  - yarn global add webpack@v2.1.0-beta.25
+  - yarn global add standard@v8.4.0
+  - yarn
+install:
+  - yarn build
+  - docker build -t rostlabazure/webpageg6 .
+after_success:
+  - if [ "$TRAVIS_BRANCH" == "develop" ]; then
+    docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD" ;
+    docker push rostlabazure/webpageg6 ;
+    fi

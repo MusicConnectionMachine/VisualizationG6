@@ -20,7 +20,6 @@ module.exports = {
     historyApiFallback: true
   },
   resolve: {
-    extensions: ['.js', '.json']
   },
   stats: {
     colors: true,
@@ -58,7 +57,7 @@ module.exports = {
       },
       {
         test: /\.(jpg|png|svg|jpeg)$/,
-        loader: 'url-loader'
+        loader: 'url-loader?name=img/[name].[ext]&publicPath=/public/'
       },
       {
         test: /\.scss$/,
@@ -76,7 +75,7 @@ module.exports = {
       },
       {
         test: /\.(eot|ttf|woff|woff2)$/,
-        loader: 'file-loader?name=fonts/[name].[ext]&publicPath=/public/'
+        loader: 'url-loader?name=fonts/[name].[ext]&publicPath=/public/'
       }
     ]
   },
