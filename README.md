@@ -36,14 +36,6 @@ yarn global add standard@v8.4.0
 
 Clone the repo/checkout the branch where the project setup is. In the terminal, navigate to the project directory, and run `yarn`. All the dependencies should then be installed.
 
-### Docker
-
-Docker is a virtualisation suit for servers. We use it to run Elasticsearch. Docker will automatically pull the latest image of Elasticsearch from their website and run it inside a virtual linux server. The **elastic-data** directory will be mounted inside this container, to make the data persistent.
-
-You have to install the [Community Edition of Docker](https://store.docker.com/search?type=edition&offering=community) for your operating sytem.
-
-Troubleshooting on Windows: If Virtualization is enabled, but wont work, try to [disable & enable Hyper-V](https://docs.microsoft.com/en-us/virtualization/hyper-v-on-windows/quick-start/enable-hyper-v).
-
 ###### Additional Licences
 
 All photos used in this project are licenced under the **_Creative Commons Zero (CC0) license._**
