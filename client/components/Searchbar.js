@@ -1,20 +1,22 @@
 import React from 'react'
 import { connect } from 'react-redux'
-const { object, string } = React.PropTypes
+import { setSearchTerm } from '../states/actionCreators'
+const { object, string, func } = React.PropTypes
 
 const Searchbar = React.createClass({
   propTypes: {
-    searchTerm: string
+    searchTerm: string,
+    dispatch: func
   },
   contextTypes: {
     router: object
   },
   handleSearchTermChange (event) {
-    this.setState({searchTerm: event.target.value})
+    this.props.dispatch(setSearchTerm(event.target.value))
   },
   handleSearchSubmit (event) {
     event.preventDefault()
-    this.context.router.transitionTo(`/search/${this.props.searchTerm}`)
+    this.context.router.transitionTo('/search')
   },
   render () {
     return (

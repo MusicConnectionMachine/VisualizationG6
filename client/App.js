@@ -20,12 +20,7 @@ const App = React.createClass({
               component={(props) => {
                 return <DetailPage type={props.params.type} id={props.params.id} />
               }} />
-            <Match
-              pattern='/search/:query'
-              component={(props) => {
-                return <Search searchTerm={props.params.query} />
-              }}
-            />
+            <Match pattern='/search' component={Search} />
           </div>
         </Provider>
       </BrowserRouter>
