@@ -3,6 +3,7 @@ import elasticSearchClient from '../services/ElasticSearch'
 import Searchbar from './Searchbar'
 import SearchResult from './SearchResult'
 import Spinner from 'react-spinkit'
+import RelationsDrawer from './RelationsDrawer'
 const numberOfResults = 12
 
 export default class Search extends React.Component {
@@ -31,6 +32,7 @@ export default class Search extends React.Component {
 
     elasticSearchClient.search({
       q: this.props.searchTerm,
+      index: 'music',
       from: from,
       size: numberOfResults
     }).then((response) => {
@@ -111,14 +113,16 @@ export default class Search extends React.Component {
     }
 
     return (
-      <div className='container'>
+      <div className='container animated fadeIn'>
 
         <div className={this.state.searchState === 'done' ? 'row margin-top-10-p' : 'row margin-top-20-p'}>
           <Searchbar initSearchTerm={this.props.searchTerm} />
         </div>
 
-        <div className='margin-top-5-p'>
-          <table className='table animated fadeIn'>
+        <RelationsDrawer searchTerm={this.props.searchTerm} />
+
+        <div>
+          <table className='table table-hover'>
             <thead>
               <tr>
                 <th>Type</th>

@@ -4,6 +4,7 @@ import Landing from './components/Landing'
 import Search from './components/Search'
 import DetailPage from './components/singleentry/DetailPage'
 import { BrowserRouter, Match } from 'react-router'
+import 'mdbootstrap/css/mdb.min.css'
 import 'bootstrap/dist/css/bootstrap.css'
 import '../style/index.scss'
 

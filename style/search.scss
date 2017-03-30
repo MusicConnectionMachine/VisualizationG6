@@ -33,3 +33,12 @@ table {
     cursor: pointer;
   }
 }
+
+.card-group {
+  display: flex;
+}
+
+.card {
+  padding: 5pt;
+  margin: 5pt;
+}
