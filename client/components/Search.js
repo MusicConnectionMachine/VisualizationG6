@@ -5,6 +5,7 @@ import Searchbar from './Searchbar'
 import SearchResult from './SearchResult'
 import Spinner from 'react-spinkit'
 const numberOfResults = 12
+import Pagination from 'react-js-pagination'
 
 class Search extends React.Component {
 
