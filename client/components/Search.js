@@ -5,7 +5,7 @@ import Searchbar from './Searchbar'
 import SearchResult from './SearchResult'
 import Spinner from 'react-spinkit'
 const numberOfResults = 12
-import Pagination from 'react-js-pagination'
+import Pagination from '../components/Pagination'
 
 class Search extends React.Component {
 
@@ -16,6 +16,7 @@ class Search extends React.Component {
     this.lastResults = this.lastResults.bind(this)
 
     this.state = {
+      activePage: 15,
       searchResult: [],
       searchState: 'none',
       oldSearch: '',
@@ -23,6 +24,11 @@ class Search extends React.Component {
       from: 0
     }
   }
+
+  handlePageChange (pageNumber) {
+    this.setState({activePage: pageNumber})
+  }
+
 
   componentDidMount () {
     this.queryDatabase(0)
@@ -93,24 +99,23 @@ class Search extends React.Component {
         tableBody = this.state.searchResult.map(data => (<SearchResult key={i++} myData={data} />))
         tableFooter = (
           <nav aria-label='Page navigation'>
-            <div className='btn-group btn-group-justified' role='group'>
-              <div className='btn-group' role='group'>
-                <button type='button' className='btn btn-default' aria-label='Last Results' onClick={this.lastResults} disabled={this.state.from <= 0}>
-                  <span className='glyphicon glyphicon-chevron-left' aria-hidden='true' /> {Math.max(this.state.from - numberOfResults + 1, 0)} - {Math.max(this.state.from, 0)}
-                </button>
-              </div>
-              <div className='btn-group' role='group'>
-                <button type='button' className='btn btn-default' aria-label='Next Results' onClick={this.nextResults} disabled={this.state.from + numberOfResults >= this.state.totalResults}>
-                  {Math.min(this.state.totalResults, this.state.from + numberOfResults + 1)} - {Math.min(this.state.totalResults, this.state.from + numberOfResults + numberOfResults)}
-                  <span className='glyphicon glyphicon-chevron-right' aria-hidden='true' />
-                </button>
-              </div>
+            <div>
+              < Pagination
+                activePage={this.state.activePage}
+                itemsCountPerPage={10}
+                totalItemsCount={450}
+                pageRangeDisplayed={5}
+                onChange={this.handlePageChange}
+              />
             </div>
+
           </nav>
         )
         break
       default:
     }
+
+    React.render(<Search />, document.getElementById("root"));
 
     return (
       <div className='container'>
