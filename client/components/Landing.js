@@ -1,12 +1,8 @@
 import React from 'react'
 import Searchbar from './Searchbar'
 import headerImage from '../../style/img/logo-landing-white.svg'
-const { object } = React.PropTypes
 
 const Landing = React.createClass({
-  contextTypes: {
-    router: object
-  },
   render () {
     return (
       <div className='home-background--patterns full-height'>

@@ -1,4 +1,5 @@
 import React from 'react'
+import { connect } from 'react-redux'
 import elasticSearchClient from '../services/ElasticSearch'
 import Searchbar from './Searchbar'
 import SearchResult from './SearchResult'
@@ -6,7 +7,7 @@ import Spinner from 'react-spinkit'
 import RelationsDrawer from './RelationsDrawer'
 const numberOfResults = 12
 
-export default class Search extends React.Component {
+class Search extends React.Component {
 
   constructor () {
     super()
@@ -24,10 +25,10 @@ export default class Search extends React.Component {
   }
 
   componentDidMount () {
-    this.queryDatabse(0)
+    this.queryDatabase(0)
   }
 
-  queryDatabse (from) {
+  queryDatabase (from) {
     this.setState({searchState: 'loading', oldSearch: this.props.searchTerm, from: from, totalResults: 0})
 
     elasticSearchClient.search({
@@ -56,18 +57,18 @@ export default class Search extends React.Component {
   }
 
   nextResults (event) {
-    this.queryDatabse(this.state.from + numberOfResults)
+    this.queryDatabase(this.state.from + numberOfResults)
   }
 
   lastResults (event) {
-    this.queryDatabse(this.state.from - numberOfResults)
+    this.queryDatabase(this.state.from - numberOfResults)
   }
 
   render () {
     let tableBody, tableFooter
 
     if (this.state.oldSearch !== this.props.searchTerm) {
-      this.queryDatabse(0)
+      this.queryDatabase(0)
     }
 
     switch (this.state.searchState) {
@@ -142,9 +143,14 @@ export default class Search extends React.Component {
           {tableFooter}
           <div className='margin-bottom-5-p' />
         </div>
-
       </div>
     )
+  }
+}
+
+const mapStateToProps = (state) => {
+  return {
+    searchTerm: state.searchTerm
   }
 }
 
@@ -153,3 +159,5 @@ Search.propTypes = {
   from: React.PropTypes.number,
   to: React.PropTypes.number
 }
+
+export default connect(mapStateToProps)(Search)
