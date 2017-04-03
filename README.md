@@ -44,19 +44,6 @@ You have to install the [Community Edition of Docker](https://store.docker.com/s
 
 Troubleshooting on Windows: If Virtualization is enabled, but wont work, try to [disable & enable Hyper-V](https://docs.microsoft.com/en-us/virtualization/hyper-v-on-windows/quick-start/enable-hyper-v).
 
-### MapView widget
-MapView widget is ready for testing. So far it is just a stand alone map widget with static data, which  can be imported as a standart React Component with:
-
-```
-import MapView from './MapView'
-<div>
-	<MapView />
-</div>
-```
-
-I have tested it out so far on the Landing page and it works. 
-Further funcionality will be implemented.
-
 ###### Additional Licences
 
 All photos used in this project are licenced under the **_Creative Commons Zero (CC0) license._**
