@@ -1,0 +1,27 @@
+.navbar-default {
+  background: url('./img/background-icon-patterns-lightblue.svg');
+  border: none;
+  border-radius: 0px;
+}
+
+nav {
+  h2 {
+    font: 35px 'League Gothic';
+    color: $flat-gray-1;
+  }
+  .navbar-form .form-control {
+    width: 400px;
+    margin-right: 50px;
+  }
+
+  .searchbar input {
+    font-size: 30px !important;
+    height: 45px;
+    background: url('./img/search-icon.svg');
+    background-position: right;
+    background-repeat: no-repeat;
+    background-size: 35px 35px !important;
+    padding: 1px !important;
+    color: $flat-gray-1;
+  }
+}
