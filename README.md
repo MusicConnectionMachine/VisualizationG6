@@ -1,4 +1,4 @@
-# VisualizationG6 [![Join the chat at https://gitter.im/MusicConnectionMachine/VisualizationG6](https://badges.gitter.im/MusicConnectionMachine/VisualizationG6.svg)](https://gitter.im/MusicConnectionMachine/VisualizationG6?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge) [![Build Status](https://travis-ci.org/MusicConnectionMachine/VisualizationG6.svg?branch=develop)](https://travis-ci.org/MusicConnectionMachine/VisualizationG6)
+# VisualizationG6 [![Join the chat at https://gitter.im/MusicConnectionMachine/VisualizationG6](https://badges.gitter.im/MusicConnectionMachine/VisualizationG6.svg)](https://gitter.im/MusicConnectionMachine/VisualizationG6?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge) [![Build Status](https://travis-ci.org/MusicConnectionMachine/VisualizationG6.svg?branch=develop)](https://travis-ci.org/MusicConnectionMachine/VisualizationG6) [![Codacy Badge](https://api.codacy.com/project/badge/Grade/cca95211df7c4b7aa9e2c877dec35c7b)](https://www.codacy.com/app/kordianbruck/VisualizationG6?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=MusicConnectionMachine/VisualizationG6&amp;utm_campaign=Badge_Grade)
 
 
 In this repository we will build a visualization of the other teams aggregated data
@@ -35,14 +35,6 @@ yarn global add standard@v8.4.0
 #### Yarn Installs
 
 Clone the repo/checkout the branch where the project setup is. In the terminal, navigate to the project directory, and run `yarn`. All the dependencies should then be installed.
-
-### Docker
-
-Docker is a virtualisation suit for servers. We use it to run Elasticsearch. Docker will automatically pull the latest image of Elasticsearch from their website and run it inside a virtual linux server. The **elastic-data** directory will be mounted inside this container, to make the data persistent.
-
-You have to install the [Community Edition of Docker](https://store.docker.com/search?type=edition&offering=community) for your operating sytem.
-
-Troubleshooting on Windows: If Virtualization is enabled, but wont work, try to [disable & enable Hyper-V](https://docs.microsoft.com/en-us/virtualization/hyper-v-on-windows/quick-start/enable-hyper-v).
 
 ###### Additional Licences
 
