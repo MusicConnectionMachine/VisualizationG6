@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import elasticSearchClient from '../services/ElasticSearch'
-import Searchbar from './Searchbar'
+import Header from './Header'
 import SearchResult from './SearchResult'
 import Spinner from 'react-spinkit'
 import RelationsDrawer from './RelationsDrawer'
@@ -114,34 +114,32 @@ class Search extends React.Component {
     }
 
     return (
-      <div className='container animated fadeIn'>
-
-        <div className={this.state.searchState === 'done' ? 'row margin-top-10-p' : 'row margin-top-20-p'}>
-          <Searchbar initSearchTerm={this.props.searchTerm} />
-        </div>
-
-        <RelationsDrawer searchTerm={this.props.searchTerm} />
-
-        <div>
-          <table className='table table-hover'>
-            <thead>
-              <tr>
-                <th>Type</th>
-                <th>Work Title</th>
-                <th>Composer</th>
-                <th>Style</th>
-                <th>Date</th>
-              </tr>
-            </thead>
-            <tbody>
-              {tableBody}
-            </tbody>
-          </table>
-          <div className='text-right margin-bottom-10-px'>
-            <small>{this.state.totalResults} Results</small>
+      <div>
+        <Header />
+        <div className='container animated fadeIn'>
+          <RelationsDrawer searchTerm={this.props.searchTerm} />
+ 
+          <div>
+            <table>
+              <thead>
+                <tr>
+                  <th>Type</th>
+                  <th>Work Title</th>
+                  <th>Composer</th>
+                  <th>Style</th>
+                  <th>Date</th>
+                </tr>
+              </thead>
+              <tbody>
+                {tableBody}
+              </tbody>
+            </table>
+            <div className='text-right margin-bottom-10-px'>
+              <small>{this.state.totalResults} Results</small>
+            </div>
+            {tableFooter}
+            <div className='margin-bottom-5-p' />
           </div>
-          {tableFooter}
-          <div className='margin-bottom-5-p' />
         </div>
       </div>
     )
