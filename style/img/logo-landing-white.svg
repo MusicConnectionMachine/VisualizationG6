@@ -1,4 +1,4 @@
-<svg width="100%" preserveAspectRatio="none" viewBox="0 0 1000 170" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<svg width="771px" height="152px" viewBox="0 0 771 152" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <title>Logo Header</title>
     <desc>Created with Sketch.</desc>
     <defs></defs>
@@ -13,20 +13,20 @@
                         <tspan x="0.96" y="29">All</tspan>
                     </text>
                     <text id="Connected" font-family="LeagueGothic-Regular, League Gothic" font-size="30" font-weight="normal" fill="#34495E">
-                        <tspan x="204.905" y="28">Connected</tspan>
+                        <tspan x="214.905" y="28">Connected</tspan>
                     </text>
                 </g>
                 <g id="Logo-Up" transform="translate(121.000000, 0.000000)">
-                    <!--<circle id="Oval-1" stroke="#ECF0F1" fill="#C0392B" cx="225" cy="20" r="5"></circle>-->
-                    <!--<circle id="Oval-1-Copy" stroke="#ECF0F1" fill="#C0392B" cx="430" cy="20" r="5"></circle>-->
+                    <circle id="Oval-1" stroke="#ECF0F1" fill="#C0392B" cx="179" cy="20" r="5"></circle>
+                    <circle id="Oval-1-Copy" stroke="#ECF0F1" fill="#C0392B" cx="378" cy="20" r="5"></circle>
                     <text id="Every-Recording" font-family="LeagueGothic-Regular, League Gothic" font-size="30" font-weight="normal" fill="#34495E">
-                        <tspan x="0.21" y="29">Every Recording</tspan>
+                        <tspan x="0.21" y="28">Every Recording</tspan>
                     </text>
                     <text id="Every-Book" font-family="LeagueGothic-Regular, League Gothic" font-size="30" font-weight="normal" fill="#34495E">
-                        <tspan x="330.045" y="29">Every Book</tspan>
+                        <tspan x="228.045" y="29">Every Book</tspan>
                     </text>
                     <text id="Every-Score" font-family="LeagueGothic-Regular, League Gothic" font-size="30" font-weight="normal" fill="#34495E">
-                        <tspan x="651.465" y="29">Every Score</tspan>
+                        <tspan x="441.465" y="29">Every Score</tspan>
                     </text>
                 </g>
                 <g id="Logo-Text-and-Icon" transform="translate(0.000000, 40.000000)">
