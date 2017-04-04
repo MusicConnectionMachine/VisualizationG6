@@ -1,3 +1,5 @@
+@import 'text';
+
 .searchResult {
   background-color: $flat-clouds;
   align-items: center;
@@ -26,12 +28,17 @@
 table {
   color: $flat-midnight-blue;
   thead {
-    font-family: 'League Gothic' !important;
+    font-family: $default-head-font;
     font-size: 23px;
   }
   tr {
     cursor: pointer;
   }
+}
+
+h2 {
+  font-family: $default-head-font;
+  color: $flat-midnight-blue;
 }
 
 .card-group {

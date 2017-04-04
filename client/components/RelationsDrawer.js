@@ -73,17 +73,21 @@ export default class RelationsDrawer extends React.Component {
           <div className='search-error'>Could not fetch any Relations for your search, please try again</div>
         )
       case 'done':
+        let key = 0
         return (
-          <div className='card-group'>
-            {this.state.from > 0 ? (<button className='btn card' onClick={this.lastResults}><span className='glyphicon glyphicon-triangle-left' /></button>) : null}
-            {this.state.searchResult.map(result => (
-              <div className='card'>
-                <div className='card-block'>
-                  <h4 className='card-text'><i className='fa fa-quote-left' />{result._source.subject} <strong>{result._source.relation}</strong> {result._source.object}<i className='fa fa-quote-right' /></h4>
+          <div>
+            <h2>Did you know?</h2>
+            <div className='card-group'>
+              {this.state.from > 0 ? (<button className='btn card' onClick={this.lastResults}><span className='glyphicon glyphicon-triangle-left' /></button>) : null}
+              {this.state.searchResult.map(result => (
+                <div className='card' key={key++}>
+                  <div className='card-block'>
+                    <h4 className='card-text'><i className='fa fa-quote-left' />{result._source.subject} <strong>{result._source.relation}</strong> {result._source.object}<i className='fa fa-quote-right' /></h4>
+                  </div>
                 </div>
-              </div>
-            ))}
-            {this.state.from + numberOfResults < this.state.totalResults ? (<button className='btn card' onClick={this.nextResults}><span className='glyphicon glyphicon-triangle-right' /></button>) : null}
+              ))}
+              {this.state.from + numberOfResults < this.state.totalResults ? (<button className='btn card' onClick={this.nextResults}><span className='glyphicon glyphicon-triangle-right' /></button>) : null}
+            </div>
           </div>
         )
       default:
