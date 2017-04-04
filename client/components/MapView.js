@@ -1,5 +1,6 @@
 import React from 'react'
 import { Map, Marker, Popup, TileLayer } from 'react-leaflet'
+import 'leaflet/dist/leaflet.css'
 const position = [51.505, -0.09]
 
 export default class MapView extends React.Component {
