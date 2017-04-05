@@ -118,9 +118,8 @@ class Search extends React.Component {
         <Header />
         <div className='container animated fadeIn'>
           <RelationsDrawer searchTerm={this.props.searchTerm} />
- 
           <div>
-            <table>
+            <table className='table table-hover'>
               <thead>
                 <tr>
                   <th>Type</th>
