@@ -5,7 +5,7 @@
   "main": "index.js",
   "repository": "https://github.com/MusicConnectionMachine/VisualizationG6.git",
   "author": "Emir Demirdag <emirdemirdag@gmail.com>, Panagiota Yeti Revithi <getire@gmail.com>, Markus Sosnowski <markus.sosnowski@tum.de>, Yanko Sabev <yanko.sabev@gmail.com>",
-  "license": "MIT",
+  "license": "GNU AFFERO",
   "scripts": {
     "lint": "standard",
     "build": "webpack --optimize-minimize",
