@@ -31,6 +31,10 @@ module.exports = {
   module: {
     rules: [
       {
+        test: /\.html$/,
+        loader: 'html-loader'
+      },
+      {
         enforce: 'pre',
         test: /\.js$/,
         loader: 'eslint-loader',
