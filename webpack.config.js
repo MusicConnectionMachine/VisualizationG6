@@ -2,9 +2,11 @@ const path = require('path')
 
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
-  template: './index.html',
+  template: './index_template.html',
   filename: 'index.html',
-  inject: 'body'
+  inject: 'body',
+  hash: true,
+  xhtml: true
 })
 
 module.exports = {
@@ -28,6 +30,10 @@ module.exports = {
   },
   module: {
     rules: [
+      {
+        test: /\.html$/,
+        loader: 'html-loader'
+      },
       {
         enforce: 'pre',
         test: /\.js$/,

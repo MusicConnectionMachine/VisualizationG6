@@ -7,5 +7,4 @@ COPY ./apache-httpd.conf /usr/local/apache2/conf/httpd.conf
 EXPOSE 80
 
 # Copy the project files into place.
-COPY public /usr/local/apache2/htdocs/public
-COPY index.html /usr/local/apache2/htdocs/
+COPY public /usr/local/apache2/htdocs
