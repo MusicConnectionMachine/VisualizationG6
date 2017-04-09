@@ -17,4 +17,5 @@ after_success:
   - if [ "$TRAVIS_BRANCH" == "develop" ]; then
     docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD" ;
     docker push rostlabazure/webpageg6 ;
+    curl -H "$DOCKER_TRIGGER_HEADER" --data "{}" "$DOCKER_TRIGGER_URL" ;
     fi

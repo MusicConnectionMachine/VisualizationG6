@@ -26,7 +26,7 @@ export default class SearchResult extends React.Component {
 
       return (
         <tr className='animated fadeIn' onClick={this.clickHandler}>
-          <th scope='row'>
+          <th className='hidden-xs' scope='row'>
             <span className='glyphicon glyphicon-cd searchResult-icon' />
           </th>
           <td><strong>{title}</strong></td>

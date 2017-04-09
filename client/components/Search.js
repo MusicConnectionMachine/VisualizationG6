@@ -122,7 +122,7 @@ class Search extends React.Component {
             <table className='table table-hover'>
               <thead>
                 <tr>
-                  <th>Type</th>
+                  <th className='hidden-xs'>Type</th>
                   <th>Work Title</th>
                   <th>Composer</th>
                   <th>Style</th>
