@@ -1,6 +1,5 @@
 import React from 'react'
 import Searchbar from './Searchbar'
-import MapView from './MapView'
 import headerImage from '../../style/img/logo-landing-white.svg'
 
 const Landing = React.createClass({
@@ -13,9 +12,6 @@ const Landing = React.createClass({
           </div>
           <div className='row margin-top-20-p'>
             <Searchbar />
-          </div>
-          <div>
-            <MapView center={[51.505, -0.09]} />
           </div>
         </div>
       </div>
