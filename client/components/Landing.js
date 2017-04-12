@@ -15,7 +15,7 @@ const Landing = React.createClass({
             <Searchbar />
           </div>
           <div>
-            <MapView center={[48.1603991, 11.5862908]} />
+            <MapView center={[51.505, -0.09]} />
           </div>
         </div>
       </div>
