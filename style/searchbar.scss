@@ -6,6 +6,16 @@
     margin-right: 10pt;
   }
 
+  .list-group-item {
+    color: $flat-asbestos;
+  }
+
+  .list-group {
+    position: absolute;
+    min-width: 20%;
+    z-index: 999;
+  }
+
   input {
     font: 45px 'League Gothic';
     border-bottom: solid 1px #ccc !important;

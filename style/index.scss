@@ -9,3 +9,7 @@
 @import './fonts/league-gothic/stylesheet';
 @import 'mapview';
 @import 'header';
+
+* {
+  z-index: 5;
+}
