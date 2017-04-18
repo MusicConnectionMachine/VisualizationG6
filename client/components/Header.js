@@ -5,7 +5,7 @@ import Searchbar from './Searchbar'
 class Header extends React.Component {
   render () {
     return (
-      <nav className='navbar navbar-default'>
+      <nav className='navbar navbar-default navbar-fixed-top'>
         <div className='container-fluid'>
           <div className='navbar-header'>
             <Link className='navbar-brand parent-center' to='/'>

@@ -1,7 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import elasticSearchClient from '../services/ElasticSearch'
-import Header from './Header'
 import SearchResult from './SearchResult'
 import Spinner from 'react-spinkit'
 import RelationsDrawer from './RelationsDrawer'
@@ -115,7 +114,6 @@ class Search extends React.Component {
 
     return (
       <div>
-        <Header />
         <div className='container animated fadeIn'>
           <RelationsDrawer searchTerm={this.props.searchTerm} />
           <div>
