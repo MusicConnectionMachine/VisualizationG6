@@ -4,6 +4,7 @@ import elasticSearchClient from '../services/ElasticSearch'
 import SearchResult from './SearchResult'
 import Spinner from 'react-spinkit'
 import RelationsDrawer from './RelationsDrawer'
+import '../../style/search.scss'
 const numberOfResults = 12
 
 class Search extends React.Component {
@@ -114,7 +115,7 @@ class Search extends React.Component {
 
     return (
       <div>
-        <div className='container animated fadeIn'>
+        <div className='container-fluid animated fadeIn search'>
           <RelationsDrawer searchTerm={this.props.searchTerm} />
           <div>
             <table className='table table-hover'>

@@ -26,7 +26,6 @@ export default class Bundle extends React.Component {
       mod: null
     })
     props.load().then(comp => {
-      console.log(comp)
       this.setState({
         mod: comp.default ? comp.default : comp
       })

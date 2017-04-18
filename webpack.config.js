@@ -46,6 +46,10 @@ module.exports = {
         loader: 'json-loader'
       },
       {
+        test: /bootstrap.+\.(jsx|js)$/,
+        loader: 'imports-loader?jQuery=jquery,$=jquery,this=>window'
+      },
+      {
         include: path.resolve(__dirname, 'client'),
         test: /\.js$/,
         loader: 'babel-loader',

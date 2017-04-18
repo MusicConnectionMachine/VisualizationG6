@@ -32,9 +32,14 @@ class Searchbar extends React.Component {
   getSuggestionsFromCookie (searchString) {
     let cookie = document.cookie
     if (cookie !== undefined && cookie !== null && cookie.length > 0) {
-      let suggestions = JSON.parse(cookie)
-      if (suggestions instanceof Array && suggestions.length > 0) {
-        return this.retrieveSuggestions(searchString, suggestions)
+      try {
+        let suggestions = JSON.parse(cookie)
+        if (suggestions instanceof Array && suggestions.length > 0) {
+          return this.retrieveSuggestions(searchString, suggestions)
+        }
+      } catch (err) {
+        console.log(err)
+        document.cookie = ''
       }
     }
     return []
