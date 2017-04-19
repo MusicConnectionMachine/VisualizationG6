@@ -1,13 +1,17 @@
 @import 'text';
 
 .navbar-default {
+  box-shadow: initial;
+}
+
+.navigation {
+  font-family: $default-head-font;
+
   background: url('./img/background-icon-patterns-lightblue.svg');
   border: none;
   border-radius: 0px;
-}
 
-nav {
-  font-family: $default-head-font;
+  box-shadow: 0 2px 5px 0 rgba(0,0,0,.16),0 2px 10px 0 rgba(0,0,0,.12);
 
   h2 {
     font-size: 25pt;
@@ -17,6 +21,7 @@ nav {
   li {
     font-size: 15pt;
     height: 65px;
+    padding-left: 12pt;
     a {
       color: $flat-gray-2;
     }

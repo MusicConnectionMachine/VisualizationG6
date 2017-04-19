@@ -7,7 +7,8 @@ class Header extends React.Component {
     let location = window.location.pathname
     return (
       <nav className='navbar navbar-default navbar-fixed-top'>
-        <div className='container-fluid'>
+        <div className='container-fluid'>TUM Logo etc.</div>
+        <div className='container-fluid navigation'>
           <div className='navbar-header'>
             <button type='button' className='navbar-toggle collapsed' data-toggle='collapse' data-target='#navbar'>
               <span className='icon-bar' />
@@ -20,6 +21,8 @@ class Header extends React.Component {
           </div>
           <div className='collapse navbar-collapse' id='navbar'>
             <ul className='navbar-nav'>
+              <li className='parent-center'><a href='http://54.68.164.199:8083' target='_blank'>Plugins</a></li>
+              <li className='parent-center'><a href='https://github.com/MusicConnectionMachine/api' target='_blank'>API</a></li>
               <li className={(location.indexOf('about') > 0 ? 'selected' : '') + ' parent-center'}><Link className='' to='/about'>About</Link></li>
             </ul>
             <div className='navbar-form navbar-right'>
