@@ -9,6 +9,11 @@ const HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
   xhtml: true
 })
 
+const GitRevisionPlugin = require('git-revision-webpack-plugin');
+const GitRevisionPluginConfig = new GitRevisionPlugin({
+  lightweightTags: true
+})
+
 module.exports = {
   context: __dirname,
   entry: './client/App.js',
@@ -98,5 +103,8 @@ module.exports = {
       }
     ]
   },
-  plugins: [HtmlWebpackPluginConfig]
+  plugins: [
+    HtmlWebpackPluginConfig,
+    GitRevisionPluginConfig
+  ]
 }

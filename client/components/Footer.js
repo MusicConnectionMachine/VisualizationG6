@@ -1,8 +1,25 @@
 import React from 'react'
 import { Link } from 'react-router'
 import '../../style/footer.scss'
+import jQuery from 'jquery'
 
 class Footer extends React.Component {
+
+  constructor (props) {
+    super(props)
+
+    this.state = {
+      version: ''
+    }
+  }
+
+  componentDidMount () {
+    let component = this
+    jQuery.get('/VERSION', function (data) {
+      component.setState({version: data})
+    })
+  }
+
   render () {
     return (
       <div className='container-fluid footer'>
@@ -28,6 +45,12 @@ class Footer extends React.Component {
             <a className='parent-center' href='#'>Facebook</a>
             <a className='parent-center' href='#'>Twitter</a>
             <a className='parent-center' href='#'>G+</a>
+        <div className='row copyright'>
+          <div className='col-md-6'>{this.state.version}</div>
+          <div className='col-md-6'>
+            <div className='pull-right'>
+              <span className='glyphicon glyphicon-copyright-mark' /> 2017 MusicConnectionMaschine
+            </div>
           </div>
         </div>
       </div>
