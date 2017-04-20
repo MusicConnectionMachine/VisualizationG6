@@ -1,0 +1,21 @@
+@import 'colors';
+
+.footer {
+  color: $flat-silver;
+  padding: 10pt;
+
+  a {
+    color: $flat-silver;
+    font-size: 10pt;
+  }
+
+  p {
+    margin-top: 10pt;
+    margin-bottom: 5pt;
+    font-size: 11pt;
+  }
+
+  .copyright {
+    margin-top: 15pt;
+  }
+}

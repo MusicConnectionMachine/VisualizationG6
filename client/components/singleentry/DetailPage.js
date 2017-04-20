@@ -3,6 +3,7 @@ import DetailTable from './DetailTable'
 import RelationshipGraph from './RelationshipGraph'
 import Comments from './Comments'
 import elasticSearchClient from '../../services/ElasticSearch'
+import '../../../style/details.scss'
 
 export default class DetailPage extends React.Component {
 
@@ -41,13 +42,17 @@ export default class DetailPage extends React.Component {
   render () {
     if (this.state.loading === 'error') {
       return (
-        <div className='searchMessage margin-top-20-p'>
-          Could not display results. Please try again.
+        <div className='container-fluid'>
+          <div className='searchMessage margin-top-20-p'>
+            Could not display results. Please try again.
+          </div>
         </div>
       )
     } else if (this.state.loading === 'loading') {
       return (
-        <div className='searchMessage margin-top-20-p'>Loading...</div>
+        <div className='container-fluid'>
+          <div className='searchMessage margin-top-20-p'>Loading...</div>
+        </div>
       )
     }
     var title
@@ -55,8 +60,8 @@ export default class DetailPage extends React.Component {
       title = this.state.myData['Work Title']
     }
     return (
-      <div className='container'>
-        <div className='margin-top-10-p row'>
+      <div className='container-fluid'>
+        <div className='margin-top-5-p row'>
           <h1>
             <a href='javascript:history.back()'><span className='glyphicon glyphicon-circle-arrow-left' /></a> {title}
           </h1>

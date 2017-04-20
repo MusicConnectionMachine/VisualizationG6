@@ -35,13 +35,5 @@ jspm_packages
 
 # Optional REPL history
 .node_repl_history
-.idea/codeStyleSettings.xml
-.idea/jsLibraryMappings.xml
-.idea/misc.xml
-.idea/modules.xml
-.idea/vcs.xml
-.idea/VisualizationG6.iml
-.idea/workspace.xml
-.idea/dictionaries/emirdemirdag.xml
-.idea/inspectionProfiles/Project_Default.xml
+.idea
 public

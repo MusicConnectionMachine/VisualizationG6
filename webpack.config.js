@@ -9,16 +9,22 @@ const HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
   xhtml: true
 })
 
+const GitRevisionPlugin = require('git-revision-webpack-plugin');
+const GitRevisionPluginConfig = new GitRevisionPlugin({
+  lightweightTags: true
+})
+
 module.exports = {
   context: __dirname,
   entry: './client/App.js',
   devtool: 'eval',
   output: {
     path: path.join(__dirname, '/public'),
-    filename: 'bundle.js'
+    filename: 'bundle.js',
+    publicPath: "/"
   },
   devServer: {
-    publicPath: '/public/',
+    publicPath: '/',
     historyApiFallback: true
   },
   resolve: {
@@ -45,9 +51,17 @@ module.exports = {
         loader: 'json-loader'
       },
       {
+        test: /bootstrap.+\.(jsx|js)$/,
+        loader: 'imports-loader?jQuery=jquery,$=jquery,this=>window'
+      },
+      {
         include: path.resolve(__dirname, 'client'),
         test: /\.js$/,
-        loader: 'babel-loader'
+        loader: 'babel-loader',
+        options: {
+          presets: [['es2015', {modules: false}]],
+          plugins: ['syntax-dynamic-import']
+        }
       },
       {
         test: /\.css$/,
@@ -89,5 +103,8 @@ module.exports = {
       }
     ]
   },
-  plugins: [HtmlWebpackPluginConfig]
+  plugins: [
+    HtmlWebpackPluginConfig,
+    GitRevisionPluginConfig
+  ]
 }

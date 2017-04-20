@@ -1,22 +1,71 @@
+@import 'text';
+
+$tumheaderheight: 60pt;
+$navigationheight: 46pt;
+
+.tumheader {
+
+  // This has to be according to TUM Corporate design
+  $x: $tumheaderheight / 3;
+  position: relative;
+  font-family: 'Arial', 'TUM Neue Helvetica', 'Sans Serif';
+  color: #000000;
+  font-size: $x * 0.35;
+  margin: $x;
+  padding: 0px;
+
+  .tumtext {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
+
+  img {
+    height: $x;
+  }
+}
+
 .navbar-default {
+  box-shadow: initial;
+}
+
+.navigation {
+  font-family: $default-head-font;
+
   background: url('./img/background-icon-patterns-lightblue.svg');
   border: none;
   border-radius: 0px;
-}
 
-nav {
+  box-shadow: 0 2px 5px 0 rgba(0,0,0,.16),0 2px 10px 0 rgba(0,0,0,.12);
+
   h2 {
-    font: 35px 'League Gothic';
-    color: $flat-gray-1;
+    font-size: 25pt;
+    color: $flat-clouds !important;
   }
+
+  li {
+    font-size: 15pt;
+    height: $navigationheight;
+    padding-left: 12pt;
+    a {
+      color: $flat-gray-2;
+    }
+  }
+
+  .selected {
+    a {
+      color: $flat-gray-1 !important;
+    }
+  }
+
   .navbar-form .form-control {
-    width: 400px;
+    width: 300pt;
     margin-right: 50px;
   }
 
   .searchbar input {
     font-size: 30px !important;
-    height: 45px;
+    height: 0.7 * $navigationheight;
     background: url('./img/search-icon.svg');
     background-position: right;
     background-repeat: no-repeat;
