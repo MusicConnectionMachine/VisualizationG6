@@ -2,6 +2,9 @@ import React from 'react'
 import { Link } from 'react-router'
 import '../../style/footer.scss'
 import jQuery from 'jquery'
+import facebookLogo from '../../style/img/facebook.svg'
+import twitterLogo from '../../style/img/twitter.svg'
+import googleLogo from '../../style/img/google-plus.svg'
 
 class Footer extends React.Component {
 
@@ -43,9 +46,9 @@ class Footer extends React.Component {
           <div className='col-md-4'>
             <p className='parent-center'>Social</p>
             <div className='parent-center'>
-              <a className='' href='#'>Facebook</a>
-              <a className='' href='#'>Twitter</a>
-              <a className='' href='#'>G+</a>
+              <a href='#'><img src={facebookLogo} /></a>
+              <a href='#'><img src={twitterLogo} /></a>
+              <a href='#'><img src={googleLogo} /></a>
             </div>
 
             <p className='parent-center'>Follow TUM on:</p>
@@ -57,8 +60,8 @@ class Footer extends React.Component {
           </div>
         </div>
         <div className='row copyright'>
-          <div className='col-md-6'>{this.state.version}</div>
-          <div className='col-md-6'>
+          <div className='col-sm-6'>{this.state.version}</div>
+          <div className='col-sm-6'>
             <div className='pull-right'>
               <span className='glyphicon glyphicon-copyright-mark' /> 2017 MusicConnectionMaschine
             </div>
