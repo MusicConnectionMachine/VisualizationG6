@@ -4,6 +4,7 @@
 @import 'searchbar';
 @import 'plugins/animate';
 @import './fonts/league-gothic/stylesheet';
+@import './fonts/tum-neue-helvetica/stylesheet';
 @import 'mapview';
 @import 'header';
 
@@ -12,7 +13,7 @@
 }
 
 body {
-  padding-top: 85px;
+  padding-top: 104pt;
 
   background: url('./img/background-icon-patterns-white.svg');
   background-position: top left;
@@ -23,14 +24,12 @@ body {
 
 .main-container {
   max-width: 780px; /* or 950px */
-  //height: 100vh;
 }
 
 .main-page {
   min-height: 400pt;
   background: white;
   border-radius: 0pt 0pt 4pt 4pt;
-  //height: 100vh;
 
   box-shadow: 3px 3px 16px 2px rgba(0,0,0,0.18);
 }

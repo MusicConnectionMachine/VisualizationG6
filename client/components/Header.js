@@ -1,13 +1,21 @@
 import React from 'react'
 import { Link } from 'react-router'
 import Searchbar from './Searchbar'
+import TumLogo from '../../style/img/TUM_Web_Logo_neg.svg'
 
 class Header extends React.Component {
   render () {
     let location = window.location.pathname
     return (
       <nav className='navbar navbar-default navbar-fixed-top'>
-        <div className='container-fluid'>TUM Logo etc.</div>
+        <div className='container-fluid tumheader'>
+          <div className='navbar-header'>
+            <div className='tumtext'>Javascript technology 2017 Seminar<br />Technical University of Munich</div>
+          </div>
+          <div className='pull-right'>
+            <a href='http://www.tum.de' target='_blank'><img className='' src={TumLogo} /></a>
+          </div>
+        </div>
         <div className='container-fluid navigation'>
           <div className='navbar-header'>
             <button type='button' className='navbar-toggle collapsed' data-toggle='collapse' data-target='#navbar'>

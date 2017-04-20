@@ -1,5 +1,30 @@
 @import 'text';
 
+$tumheaderheight: 60pt;
+$navigationheight: 46pt;
+
+.tumheader {
+
+  // This has to be according to TUM Corporate design
+  $x: $tumheaderheight / 3;
+  position: relative;
+  font-family: 'Arial', 'TUM Neue Helvetica', 'Sans Serif';
+  color: #000000;
+  font-size: $x / 3;
+  margin: $x;
+  padding: 0px;
+
+  .tumtext {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
+
+  img {
+    height: $x;
+  }
+}
+
 .navbar-default {
   box-shadow: initial;
 }
@@ -20,7 +45,7 @@
 
   li {
     font-size: 15pt;
-    height: 65px;
+    height: $navigationheight;
     padding-left: 12pt;
     a {
       color: $flat-gray-2;
@@ -40,7 +65,7 @@
 
   .searchbar input {
     font-size: 30px !important;
-    height: 45px;
+    height: 0.7 * $navigationheight;
     background: url('./img/search-icon.svg');
     background-position: right;
     background-repeat: no-repeat;

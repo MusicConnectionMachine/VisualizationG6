@@ -42,9 +42,20 @@ class Footer extends React.Component {
           </div>
           <div className='col-md-4'>
             <p className='parent-center'>Social</p>
-            <a className='parent-center' href='#'>Facebook</a>
-            <a className='parent-center' href='#'>Twitter</a>
-            <a className='parent-center' href='#'>G+</a>
+            <div className='parent-center'>
+              <a className='' href='#'>Facebook</a>
+              <a className='' href='#'>Twitter</a>
+              <a className='' href='#'>G+</a>
+            </div>
+
+            <p className='parent-center'>Follow TUM on:</p>
+            <div className='parent-center'>
+              <a className='' href='#'>Facebook</a>
+              <a className='' href='#'>Twitter</a>
+              <a className='' href='#'>Youtube</a>
+            </div>
+          </div>
+        </div>
         <div className='row copyright'>
           <div className='col-md-6'>{this.state.version}</div>
           <div className='col-md-6'>
