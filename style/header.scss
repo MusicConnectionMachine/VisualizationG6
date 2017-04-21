@@ -25,6 +25,11 @@ $navigationheight: 46pt;
   }
 }
 
+.tum-logo {
+  width: 60px;
+  height: 60px;
+}
+
 .navbar-default {
   box-shadow: initial;
 }
@@ -32,24 +37,20 @@ $navigationheight: 46pt;
 .navigation {
   font-family: $default-head-font;
 
-  background: url('./img/background-icon-patterns-lightblue.svg');
+  background: #3070b3;
   border: none;
   border-radius: 0px;
 
   box-shadow: 0 2px 5px 0 rgba(0,0,0,.16),0 2px 10px 0 rgba(0,0,0,.12);
 
   h2 {
-    font-size: 25pt;
+    font-size: 16pt;
     color: $flat-clouds !important;
+    margin-top: 10px !important;
   }
 
-  li {
-    font-size: 15pt;
-    height: $navigationheight;
-    padding-left: 12pt;
-    a {
-      color: $flat-gray-2;
-    }
+  .navbar-nav {
+    width: 100%;
   }
 
   .selected {
@@ -72,5 +73,51 @@ $navigationheight: 46pt;
     background-size: 35px 35px !important;
     padding: 1px !important;
     color: $flat-gray-1;
+  }
+}
+
+.nav-menu {
+  li {
+    font-size: 15pt;
+    height: $navigationheight;
+    padding: 0px 20px;
+    width: 33%;
+    a {
+      color: $flat-gray-1 !important;
+      width: 100%;
+      text-align: center;
+      position: relative;
+      padding:0px 5px;
+      font-size:15px;
+      line-height:54px;
+      font-weight:700;
+      letter-spacing:0.01em;
+      text-transform:uppercase;
+      background:transparent;
+    }
+  }
+
+  a:hover:before {
+      bottom:8px;
+      opacity:1;
+  }
+
+  a:before {
+    display:block;
+    position:absolute;
+    bottom:0;
+    left:25%;
+    content:"";
+    width:50%;
+    height:3px;
+    background:#fff;
+    z-index:-1;
+    opacity:0;
+    -webkit-transition:all 0.3s ease-out;
+    transition:all 0.3s ease-out;
+  }
+
+  .scrolled a:before {
+      background:#3a3c4a;
   }
 }
