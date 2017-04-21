@@ -6,6 +6,10 @@ import TumLogo from '../../style/img/TUM_Web_Logo_neg.svg'
 class Header extends React.Component {
   render () {
     let location = window.location.pathname
+    let utilSpace
+    if (this.props.showSearch) {
+      utilSpace = <Searchbar />
+    }
     return (
       <nav className='navbar navbar-default navbar-fixed-top'>
         <div className='container-fluid tumheader'>
@@ -34,13 +38,18 @@ class Header extends React.Component {
               <li className={(location.indexOf('about') > 0 ? 'selected' : '') + ' parent-center'}><Link className='' to='/about'>About</Link></li>
             </ul>
             <div className='navbar-form navbar-right'>
-              <Searchbar />
+              {utilSpace}
             </div>
           </div>
         </div>
       </nav>
     )
   }
+}
+
+const { bool } = React.PropTypes
+Header.propTypes = {
+  showSearch: bool
 }
 
 export default Header

@@ -1,7 +1,6 @@
 import React from 'react'
 import { render } from 'react-dom'
 import Bundle from './Bundle'
-import Header from './components/Header'
 import { BrowserRouter, Match } from 'react-router'
 import { Provider } from 'react-redux'
 import store from './states/store'
@@ -18,7 +17,6 @@ const App = React.createClass({
       <BrowserRouter>
         <Provider store={store}>
           <div className='container main-container'>
-            <Header />
             <div className='main-page'>
               <Match exactly pattern='/' component={Landing} />
               <Match pattern='/details/:type/:id'
