@@ -110,14 +110,10 @@ $navigationheight: 46pt;
     content:"";
     width:50%;
     height:3px;
-    background:#fff;
-    z-index:-1;
+    background: #FFFFFF;
+    z-index:999;
     opacity:0;
     -webkit-transition:all 0.3s ease-out;
     transition:all 0.3s ease-out;
-  }
-
-  .scrolled a:before {
-      background:#3a3c4a;
   }
 }

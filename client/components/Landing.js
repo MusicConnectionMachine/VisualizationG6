@@ -1,5 +1,6 @@
 import React from 'react'
 import Header from './Header'
+import Footer from './Footer'
 import Searchbar from './Searchbar'
 import headerImage from '../../style/img/logo-landing-white.svg'
 import '../../style/landing.scss'
@@ -9,7 +10,7 @@ const Landing = React.createClass({
     return (
       <div>
         <Header />
-        <div className='container-fluid'>
+        <div className='container-fluid' style={{ width: '70%' }}>
           <div className='center-block text-center text-white margin-top-10-p animated fadeIn'>
             <img src={headerImage} alt='Music Connection Machine Logo' />
           </div>
@@ -17,6 +18,7 @@ const Landing = React.createClass({
             <Searchbar />
           </div>
         </div>
+        <Footer />
       </div>
     )
   }
