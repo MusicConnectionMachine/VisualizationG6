@@ -65,17 +65,6 @@ $navigationheight: 46pt;
     width: 300pt;
     margin-right: 50px;
   }
-
-  .searchbar input {
-    font-size: 30px !important;
-    height: 0.7 * $navigationheight;
-    background: url('./img/search-icon.svg');
-    background-position: right;
-    background-repeat: no-repeat;
-    background-size: 35px 35px !important;
-    padding: 1px !important;
-    color: $flat-gray-1;
-  }
 }
 
 .nav-menu {
@@ -83,7 +72,6 @@ $navigationheight: 46pt;
     font-size: 15pt;
     height: $navigationheight;
     padding: 0px 20px;
-    width: 33%;
     a {
       color: $tum-color !important;
       width: 100%;
