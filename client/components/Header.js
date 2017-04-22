@@ -43,7 +43,7 @@ class Header extends React.Component {
             <ul className='nav navbar-nav nav-menu'>
               <li className=''><a href='http://54.68.164.199:8083' target='_blank'>Plugins</a></li>
               <li className=''><a href='https://github.com/MusicConnectionMachine/api' target='_blank'>API</a></li>
-              <li className={(location.indexOf('about') > 0 ? 'active' : '')}><Link className='' to='/about'>About</Link></li>
+              <li className={(location.indexOf('about') > 0 ? 'selected' : '')}><Link className='' to='/about'>About</Link></li>
             </ul>
             {utilSpace}
           </div>

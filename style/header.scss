@@ -41,6 +41,7 @@ $navigationheight: 55px;
   background: #FFFFFF;
   border: none;
   border-radius: 0px;
+  padding: 0px 20px;
 
   box-shadow: 0 2px 5px 0 rgba(0,0,0,.16),0 2px 10px 0 rgba(0,0,0,.12);
 
@@ -52,12 +53,13 @@ $navigationheight: 55px;
 
   .selected {
     a {
-      color: $tum-color !important;
+      background-color: $flat-clouds !important;
+      padding-left: 15px;
+      padding-right: 15px;
     }
   }
 
   .navbar-form .form-control {
-    // width: 300pt;
     margin-right: 50px;
   }
 }
