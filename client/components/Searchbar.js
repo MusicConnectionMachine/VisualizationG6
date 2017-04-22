@@ -123,7 +123,7 @@ class Searchbar extends React.Component {
             inputProps={{
               type: 'search',
               className: 'form-control',
-              placeholder: 'Search for something.'
+              placeholder: 'Search for composers, musicians and music works.'
             }}
             items={this.state.suggestions}
             onChange={this.handleSearchTermChange}
