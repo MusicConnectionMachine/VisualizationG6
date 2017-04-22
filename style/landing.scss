@@ -1,20 +1,27 @@
 @import 'colors';
 
-.home-background {
-  background: linear-gradient(
-                  rgba(28, 53, 86, 0.25),
-                  rgba(28, 53, 86, 0.25)
-  ),
-  url('./img/background_auditorium_blur.jpg');
-  background-position: center;
-  background-attachment: fixed;
-  background-repeat: no-repeat;
-  background-size: cover;
-  &--patterns {
-    background: url('./img/background-icon-patterns-white.svg');
-    background-position: top left;
+.landing {
+
+  .mcmlogo {
+    width: 100%;
+  }
+
+  .home-background {
+    background: linear-gradient(
+                    rgba(28, 53, 86, 0.25),
+                    rgba(28, 53, 86, 0.25)
+    ),
+    url('./img/background_auditorium_blur.jpg');
+    background-position: center;
     background-attachment: fixed;
-    background-repeat: repeat;
-    background-size: contain;
+    background-repeat: no-repeat;
+    background-size: cover;
+    &--patterns {
+      background: url('./img/background-icon-patterns-white.svg');
+      background-position: top left;
+      background-attachment: fixed;
+      background-repeat: repeat;
+      background-size: contain;
+    }
   }
 }

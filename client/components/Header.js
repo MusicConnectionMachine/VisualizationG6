@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from 'react-router'
 import Searchbar from './Searchbar'
 import TumLogo from '../../style/img/TUM_Web_Logo_neg.svg'
+import MCMLogo from '../../style/img/logo/mcm.svg'
 
 class Header extends React.Component {
   render () {
@@ -29,15 +30,15 @@ class Header extends React.Component {
             </a>
           </div>
         </div>
-        <div className='container-fluid navigation row parent-center' style={{ padding: '0px 20px' }}>
-          <div className='navbar-header col-md-4'>
+        <div className='container-fluid navigation row' style={{ padding: '0px 20px' }}>
+          <div className='navbar-header'>
             <button type='button' className='navbar-toggle collapsed' data-toggle='collapse' data-target='#navbar'>
               <span className='icon-bar' />
               <span className='icon-bar' />
               <span className='icon-bar' />
             </button>
-            <Link className='navbar-brand parent-center' to='/'>
-              <h2>MusicConnectionMachine</h2>
+            <Link className='navbar-brand' to='/'>
+              <img className='mcmlogo' src={MCMLogo} alt='MusicConnectionMachine' />
             </Link>
           </div>
           <div className={'col-md-4 parent-center ' + colClass} id='navbar'>

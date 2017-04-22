@@ -57,13 +57,16 @@ $navigationheight: 46pt;
   .selected {
     a {
       color: $tum-color !important;
-
     }
   }
 
   .navbar-form .form-control {
     width: 300pt;
     margin-right: 50px;
+  }
+
+  .mcmlogo {
+    height: $navigationheight;
   }
 }
 
