@@ -7,7 +7,7 @@ class Header extends React.Component {
   render () {
     let location = window.location.pathname
     let utilSpace, colClass
-    if (this.props.showSearch) {
+    if (location !== '/') {
       utilSpace = (
         <div className='col-md-4 parent-center'>
           <div className='navbar-form navbar-right'>
