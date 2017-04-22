@@ -12,6 +12,14 @@ class Header extends React.Component {
     }
     return (
       <nav className='navbar navbar-default navbar-fixed-top'>
+        <div className='tum-header row'>
+          <div className='col-md-4 pull-left' style={{margin: '10px'}}>Technical University of Munich</div>
+          <div className='col-md-4 pull-right' style={{paddingRight: '50px', marginTop: '8px'}}>
+            <a href='http://www.tum.de' target='_blank'>
+              <img className='tum-logo pull-right' src={TumLogo} />
+            </a>
+          </div>
+        </div>
         <div className='container-fluid navigation row parent-center' style={{ padding: '0px 20px' }}>
           <div className='navbar-header col-md-4'>
             <button type='button' className='navbar-toggle collapsed' data-toggle='collapse' data-target='#navbar'>
@@ -22,11 +30,6 @@ class Header extends React.Component {
             <Link className='navbar-brand parent-center' to='/'>
               <h2>MusicConnectionMachine</h2>
             </Link>
-          </div>
-          <div className='col-md-4 parent-center'>
-            <a href='http://www.tum.de' target='_blank'>
-              <img className='tum-logo' src={TumLogo} />
-            </a>
           </div>
           <div className='col-md-4 parent-center' id='navbar'>
             <ul className='navbar-nav pull-right nav-menu'>

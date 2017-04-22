@@ -1,17 +1,18 @@
 @import 'text';
 
-$tumheaderheight: 60pt;
+$tumheaderheight: 60px;
 $navigationheight: 46pt;
 
-.tumheader {
+.tum-header {
 
   // This has to be according to TUM Corporate design
   $x: $tumheaderheight / 3;
   position: relative;
   font-family: 'Arial', 'TUM Neue Helvetica', 'Sans Serif';
-  color: #000000;
-  font-size: $x * 0.35;
-  margin: $x;
+  color: #FFFFFF;
+  background: $tum-color;
+  font-size: 12px;
+  margin: 0px;
   padding: 0px;
 
   .tumtext {
@@ -26,8 +27,8 @@ $navigationheight: 46pt;
 }
 
 .tum-logo {
-  width: 60px;
-  height: 60px;
+  width: 40px;
+  height: 40px;
 }
 
 .navbar-default {
@@ -37,7 +38,7 @@ $navigationheight: 46pt;
 .navigation {
   font-family: $default-head-font;
 
-  background: #3070b3;
+  background: #FFFFFF;
   border: none;
   border-radius: 0px;
 
@@ -45,7 +46,7 @@ $navigationheight: 46pt;
 
   h2 {
     font-size: 16pt;
-    color: $flat-clouds !important;
+    color: $tum-color !important;
     margin-top: 10px !important;
   }
 
@@ -55,7 +56,8 @@ $navigationheight: 46pt;
 
   .selected {
     a {
-      color: $flat-gray-1 !important;
+      color: $tum-color !important;
+
     }
   }
 
@@ -83,7 +85,7 @@ $navigationheight: 46pt;
     padding: 0px 20px;
     width: 33%;
     a {
-      color: $flat-gray-1 !important;
+      color: $tum-color !important;
       width: 100%;
       text-align: center;
       position: relative;
@@ -110,7 +112,7 @@ $navigationheight: 46pt;
     content:"";
     width:50%;
     height:3px;
-    background: #FFFFFF;
+    background: $tum-color;
     z-index:999;
     opacity:0;
     -webkit-transition:all 0.3s ease-out;

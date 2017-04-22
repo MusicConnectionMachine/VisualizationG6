@@ -20,10 +20,11 @@ html {
 
 body {
   padding-top: 104pt;
-
   background: url('./img/background-icon-patterns-white.svg');
   background-position: top left;
   background-attachment: fixed;
   background-repeat: repeat;
   background-size: contain;
+  -webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 }
