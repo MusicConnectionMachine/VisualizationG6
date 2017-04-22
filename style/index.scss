@@ -7,29 +7,24 @@
 @import './fonts/tum-neue-helvetica/stylesheet';
 @import 'mapview';
 @import 'header';
+@import url('https://fonts.googleapis.com/css?family=Roboto|Titillium+Web');
 
-* {
-  z-index: 5;
+/*
+font-family: 'Roboto', sans-serif;
+font-family: 'Titillium Web', sans-serif;
+*/
+
+html {
+  height: 100%;
 }
 
 body {
   padding-top: 104pt;
-
   background: url('./img/background-icon-patterns-white.svg');
   background-position: top left;
   background-attachment: fixed;
   background-repeat: repeat;
   background-size: contain;
-}
-
-.main-container {
-  max-width: 780px; /* or 950px */
-}
-
-.main-page {
-  min-height: 400pt;
-  background: white;
-  border-radius: 0pt 0pt 4pt 4pt;
-
-  box-shadow: 3px 3px 16px 2px rgba(0,0,0,0.18);
+  -webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 }
