@@ -6,9 +6,18 @@ import TumLogo from '../../style/img/TUM_Web_Logo_neg.svg'
 class Header extends React.Component {
   render () {
     let location = window.location.pathname
-    let utilSpace
+    let utilSpace, colClass
     if (this.props.showSearch) {
-      utilSpace = <Searchbar />
+      utilSpace = (
+        <div className='col-md-4 parent-center'>
+          <div className='navbar-form navbar-right'>
+            <Searchbar />
+          </div>
+        </div>
+      )
+      colClass = ''
+    } else {
+      colClass = 'pull-right'
     }
     return (
       <nav className='navbar navbar-default navbar-fixed-top'>
@@ -31,16 +40,14 @@ class Header extends React.Component {
               <h2>MusicConnectionMachine</h2>
             </Link>
           </div>
-          <div className='col-md-4 parent-center' id='navbar'>
+          <div className={'col-md-4 parent-center ' + colClass} id='navbar'>
             <ul className='navbar-nav pull-right nav-menu'>
               <li className='parent-center'><a href='http://54.68.164.199:8083' target='_blank'>Plugins</a></li>
               <li className='parent-center'><a href='https://github.com/MusicConnectionMachine/api' target='_blank'>API</a></li>
               <li className={(location.indexOf('about') > 0 ? 'selected' : '') + ' parent-center'}><Link className='' to='/about'>About</Link></li>
             </ul>
-            <div className='navbar-form navbar-right'>
-              {utilSpace}
-            </div>
           </div>
+          {utilSpace}
         </div>
       </nav>
     )
