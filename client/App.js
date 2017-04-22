@@ -3,8 +3,6 @@ import { render } from 'react-dom'
 import Bundle from './Bundle'
 import { BrowserRouter, Match } from 'react-router'
 import { Provider } from 'react-redux'
-import Header from './components/Header'
-import Footer from './components/Footer'
 import store from './states/store'
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap/js/collapse'
@@ -18,7 +16,6 @@ const App = React.createClass({
       <BrowserRouter>
         <Provider store={store}>
           <div className='container'>
-            <Header />
             <Match exactly pattern='/' component={Landing} />
             <Match pattern='/details/:type/:id'
               component={(props) => {
@@ -33,7 +30,6 @@ const App = React.createClass({
             <Match exactly pattern='/legal' component={() => {
               return <Bundle load={() => import('./components/Legal')} />
             }} />
-            <Footer />
           </div>
         </Provider>
       </BrowserRouter>
