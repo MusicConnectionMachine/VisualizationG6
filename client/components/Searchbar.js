@@ -30,7 +30,7 @@ class Searchbar extends React.Component {
   }
 
   getSuggestionsFromCookie (searchString) {
-    let cookie = document.cookie
+    let cookie = this.getCookie()
     if (cookie !== undefined && cookie !== null && cookie.length > 0) {
       try {
         let suggestions = JSON.parse(cookie)
@@ -38,10 +38,30 @@ class Searchbar extends React.Component {
           return this.retrieveSuggestions(searchString, suggestions)
         }
       } catch (err) {
+        this.setCookie('', true)
         console.log(err)
       }
     }
     return []
+  }
+
+  getCookie () {
+    let name = 'suggestions='
+    let decodedCookie = decodeURIComponent(document.cookie)
+    if (decodedCookie.indexOf(name) >= 0) {
+      decodedCookie = decodedCookie.substring(decodedCookie.indexOf(name) + name.length)
+    } else {
+      return ''
+    }
+    return decodedCookie
+  }
+
+  setCookie (cvalue, deleteME) {
+    let expires = ''
+    if (deleteME) {
+      expires = ';expires=Thu, 01 Jan 1970 00:00:00 UTC'
+    }
+    document.cookie = 'suggestions=' + cvalue + expires + ';path=/'
   }
 
   retrieveSuggestions (searchString, inputArray) {
@@ -66,7 +86,7 @@ class Searchbar extends React.Component {
     event.preventDefault()
 
     if (this.state.searchTerm.length > 0) {
-      let cookie = document.cookie
+      let cookie = this.getCookie()
       let suggestions = []
       if (cookie !== undefined && cookie !== null && cookie.length > 0) {
         suggestions = JSON.parse(cookie)
@@ -84,7 +104,7 @@ class Searchbar extends React.Component {
       if (!included) {
         suggestions.push({name: this.state.searchTerm, counter: 1})
       }
-      document.cookie = JSON.stringify(suggestions)
+      this.setCookie(JSON.stringify(suggestions), false)
     }
 
     this.context.router.transitionTo('/search')
