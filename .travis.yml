@@ -4,6 +4,8 @@ node_js:
   - "node"
 cache:
   yarn: true
+git:
+  submodules: false
 services:
   - docker
 before_install:
