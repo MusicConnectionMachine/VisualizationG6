@@ -1,7 +1,7 @@
 import React from 'react'
 import Searchbar from './Searchbar'
 import Header from './Header'
-import headerImage from '../../style/img/logo-landing-white.svg'
+import headerImage from '../../style/img/logo-big.png'
 import '../../style/landing.scss'
 
 const Landing = React.createClass({
