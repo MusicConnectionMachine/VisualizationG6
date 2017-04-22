@@ -31,8 +31,14 @@ const App = React.createClass({
               <Match exactly pattern='/about' component={() => {
                 return <Bundle load={() => import('./components/About')} />
               }} />
-              <Match exactly pattern='/legal' component={() => {
-                return <Bundle load={() => import('./components/Legal')} />
+              <Match exactly pattern='/imprint' component={() => {
+                return <Bundle load={() => import('./components/static/Imprint')} />
+              }} />
+              <Match exactly pattern='/privacy' component={() => {
+                return <Bundle load={() => import('./components/static/Privacy')} />
+              }} />
+              <Match exactly pattern='/attribution' component={() => {
+                return <Bundle load={() => import('./components/static/Attribution')} />
               }} />
             </div>
             <Footer />
