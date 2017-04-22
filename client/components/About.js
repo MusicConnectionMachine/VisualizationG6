@@ -1,6 +1,8 @@
 import React from 'react'
 import Header from './Header'
 import groupPhoto from '../../style/img/groupPhoto.jpg'
+import '../../style/about.scss'
+
 class About extends React.Component {
   render () {
     return (
