@@ -17,22 +17,24 @@ const App = React.createClass({
     return (
       <BrowserRouter>
         <Provider store={store}>
-          <div className='container'>
+          <div>
             <Header />
-            <Match exactly pattern='/' component={Landing} />
-            <Match pattern='/details/:type/:id'
-              component={(props) => {
-                return <Bundle type={props.params.type} id={props.params.id} load={() => import('./components/singleentry/DetailPage')} />
+            <div className='container main-container'>
+              <Match exactly pattern='/' component={Landing} />
+              <Match pattern='/details/:type/:id'
+                component={(props) => {
+                  return <Bundle type={props.params.type} id={props.params.id} load={() => import('./components/singleentry/DetailPage')} />
+                }} />
+              <Match exactly pattern='/search' component={() => {
+                return <Bundle load={() => import('./components/Search')} />
               }} />
-            <Match exactly pattern='/search' component={() => {
-              return <Bundle load={() => import('./components/Search')} />
-            }} />
-            <Match exactly pattern='/about' component={() => {
-              return <Bundle load={() => import('./components/About')} />
-            }} />
-            <Match exactly pattern='/legal' component={() => {
-              return <Bundle load={() => import('./components/Legal')} />
-            }} />
+              <Match exactly pattern='/about' component={() => {
+                return <Bundle load={() => import('./components/About')} />
+              }} />
+              <Match exactly pattern='/legal' component={() => {
+                return <Bundle load={() => import('./components/Legal')} />
+              }} />
+            </div>
             <Footer />
           </div>
         </Provider>
