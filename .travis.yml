@@ -7,10 +7,10 @@ cache:
 services:
   - docker
 before_install:
-  - yarn global add webpack@v2.1.0-beta.25
-  - yarn global add standard@v8.4.0
   - sed -i 's/git@github.com:/https:\/\/github.com\//' .gitmodules
   - git submodule update --init --recursive
+  - yarn global add webpack@v2.1.0-beta.25
+  - yarn global add standard@v8.4.0
   - yarn
 install:
   - yarn build
