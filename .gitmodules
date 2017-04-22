@@ -1,0 +1,3 @@
+[submodule "VisualizationG5"]
+	path = VisualizationG5
+	url = git@github.com:MusicConnectionMachine/VisualizationG5.git
