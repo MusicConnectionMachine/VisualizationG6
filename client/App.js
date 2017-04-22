@@ -9,6 +9,8 @@ import 'bootstrap/js/collapse'
 import 'mdbootstrap/css/mdb.min.css'
 import '../style/index.scss'
 import Landing from './components/Landing'
+import Header from './components/Header'
+import Footer from './components/Footer'
 
 const App = React.createClass({
   render () {
