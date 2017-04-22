@@ -36,9 +36,9 @@
     "reactstrap": "^4.3.0",
     "recharts": "0.19.1",
     "shallowequal": "0.2.2",
-    "style-loader": "0.13.2",
     "vis": "^4.18.1",
-    "whatwg-fetch": "2.0.1"
+    "whatwg-fetch": "2.0.1",
+    "style-loader": "^0.13.2"
   },
   "devDependencies": {
     "autoprefixer": ">=6.7.7",
@@ -84,8 +84,6 @@
     "babel-plugin-transform-strict-mode": "6.11.3",
     "bundle-loader": "0.5.4",
     "eslint-config-airbnb": "2.1.1",
-    "phantomjs": "1.9.20",
-    "react-addons-test-utils": "15.4.1",
-    "style-loader": "^0.13.2"
+    "react-addons-test-utils": "15.4.1"
   }
 }
