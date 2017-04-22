@@ -15,21 +15,31 @@ const App = React.createClass({
     return (
       <BrowserRouter>
         <Provider store={store}>
-          <div className='container'>
-            <Match exactly pattern='/' component={Landing} />
-            <Match pattern='/details/:type/:id'
-              component={(props) => {
-                return <Bundle type={props.params.type} id={props.params.id} load={() => import('./components/singleentry/DetailPage')} />
+          <div>
+            <Header />
+            <div className='container main-container'>
+              <Match exactly pattern='/' component={Landing} />
+              <Match pattern='/details/:type/:id'
+                component={(props) => {
+                  return <Bundle type={props.params.type} id={props.params.id} load={() => import('./components/singleentry/DetailPage')} />
+                }} />
+              <Match exactly pattern='/search' component={() => {
+                return <Bundle load={() => import('./components/Search')} />
               }} />
-            <Match exactly pattern='/search' component={() => {
-              return <Bundle load={() => import('./components/Search')} />
-            }} />
-            <Match exactly pattern='/about' component={() => {
-              return <Bundle load={() => import('./components/About')} />
-            }} />
-            <Match exactly pattern='/legal' component={() => {
-              return <Bundle load={() => import('./components/Legal')} />
-            }} />
+              <Match exactly pattern='/about' component={() => {
+                return <Bundle load={() => import('./components/About')} />
+              }} />
+              <Match exactly pattern='/imprint' component={() => {
+                return <Bundle load={() => import('./components/static/Imprint')} />
+              }} />
+              <Match exactly pattern='/privacy' component={() => {
+                return <Bundle load={() => import('./components/static/Privacy')} />
+              }} />
+              <Match exactly pattern='/attribution' component={() => {
+                return <Bundle load={() => import('./components/static/Attribution')} />
+              }} />
+            </div>
+            <Footer />
           </div>
         </Provider>
       </BrowserRouter>

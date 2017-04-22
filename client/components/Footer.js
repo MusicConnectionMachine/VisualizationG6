@@ -34,9 +34,10 @@ class Footer extends React.Component {
           </div>
           <div className='col-md-6'>
             <ul className='foot-nav'>
-              <li><Link className='parent-center' to='/legal'>Legal</Link></li>
               <li><Link className='parent-center' to='/about'>About</Link></li>
-              <li><Link className='parent-center' to='/'><i className='fa fa-copyright' aria-hidden='true' />&nbsp;2017 Javascript Technology Seminar</Link></li>
+              <li><Link className='parent-center' to='/imprint'>Imprint & Disclaimer</Link></li>
+              <li><Link className='parent-center' to='/attribution'>Attributions</Link></li>
+              <li><Link className='parent-center' to='/privacy'>Privacy Policy</Link></li>
             </ul>
           </div>
           <div className='col-md-3 parent-center' style={{ height: '95px' }}>
@@ -46,6 +47,14 @@ class Footer extends React.Component {
               <li><a href='https://github.com/MusicConnectionMachine'><i className='fa fa-github' aria-hidden='true' /></a></li>
               <li><a href='https://github.com/MusicConnectionMachine'><i className='fa fa-google-plus' aria-hidden='true' /></a></li>
             </ul>
+          </div>
+        </div>
+        <div className='row'>
+          <div className='col-sm-2'>
+            Version: {this.state.version}
+          </div>
+          <div className='col-sm-3 pull-right'>
+            <Link to='/'><i className='fa fa-copyright' aria-hidden='true' />&nbsp;2017 Javascript Technology Seminar</Link>
           </div>
         </div>
       </div>
