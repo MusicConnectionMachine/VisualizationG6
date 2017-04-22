@@ -1,7 +1,6 @@
 .searchbar {
 
   form {
-    width: 68%;
     margin-left: 10pt;
     margin-right: 10pt;
   }
@@ -17,11 +16,14 @@
   }
 
   input {
-    font: 45px 'League Gothic';
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px !important;
     border-bottom: solid 1px #ccc !important;
     background: url('./img/search-icon-white.svg');
     background-position: right;
+    background-attachment: fixed;
     background-repeat: no-repeat;
+    background-size: 50px 30px;
     border: none;
     box-shadow: none !important;
     height: 60px;
