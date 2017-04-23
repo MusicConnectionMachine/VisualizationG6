@@ -4,6 +4,7 @@ import MCMSearch from '../services/MCMSearch'
 import SearchResult from './SearchResult'
 import Spinner from 'react-spinkit'
 import RelationsDrawer from './RelationsDrawer'
+import Searchbar from './Searchbar'
 import '../../style/search.scss'
 const numberOfResults = 12
 
@@ -110,7 +111,10 @@ class Search extends React.Component {
         break
       case 'typesomething':
         body = (
-          <div className='searchMessage'>Just start searching with typing your favourite composer, music work or musician on top right corner!</div>
+          <div>
+            <div className='searchMessage visible-xs visible-sm help-block'>Just start searching with typing your favourite composer, music work or musician here!</div>
+            <div className='searchMessage hidden-xs hidden-sm'>Just start searching with typing your favourite composer, music work or musician on top right corner!</div>
+          </div>
         )
         break
       case 'done':
@@ -181,6 +185,9 @@ class Search extends React.Component {
     return (
       <div>
         <div className='container-fluid animated fadeIn search'>
+          <div className='visible-xs visible-sm'>
+            <Searchbar />
+          </div>
           <RelationsDrawer searchTerm={this.props.searchTerm} />
           {body}
         </div>
