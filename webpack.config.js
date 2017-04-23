@@ -6,7 +6,8 @@ const HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
   filename: 'index.html',
   inject: 'body',
   hash: true,
-  xhtml: true
+  xhtml: true,
+  favicon: './style/img/mcm_logo/favicon-32x32.png'
 })
 
 const GitRevisionPlugin = require('git-revision-webpack-plugin');
