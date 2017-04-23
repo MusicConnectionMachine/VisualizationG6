@@ -116,14 +116,14 @@ class Searchbar extends React.Component {
 
   render () {
     return (
-      <div className='parent-center searchbar animated fadeIn'>
-        <form onSubmit={this.handleSearchSubmit}>
+      <div className='searchbar animated fadeIn'>
+        <form className='parent-center' onSubmit={this.handleSearchSubmit}>
           <Autocomplete
             getItemValue={this.getItemValue}
             inputProps={{
               type: 'search',
               className: 'form-control',
-              placeholder: 'Type your favorite musician.'
+              placeholder: 'Search for something.'
             }}
             items={this.state.suggestions}
             onChange={this.handleSearchTermChange}
@@ -137,7 +137,7 @@ class Searchbar extends React.Component {
               </div>
             )}
             renderMenu={(items, value, style) => (
-              <div className='list-group' children={items} />
+              <div className='list-group autocomplete' children={items} />
             )}
             wrapperStyle={{}}
             value={this.state.searchTerm}

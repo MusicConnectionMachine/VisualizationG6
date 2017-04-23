@@ -11,8 +11,12 @@
 
   .list-group {
     position: absolute;
-    min-width: 30%;
+    // min-width: 30%;
     z-index: 999;
+  }
+
+  .autocomplete {
+    min-width: 20%;
   }
 
   input {
