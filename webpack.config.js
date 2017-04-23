@@ -100,6 +100,10 @@ module.exports = {
       {
         test: /\.(eot|ttf|woff|woff2)$/,
         loader: 'url-loader?name=fonts/[name].[ext]&publicPath=/public/'
+      },
+      {
+        test: /\.txt$/,
+        loader: 'raw-loader'
       }
     ]
   },

@@ -1,5 +1,4 @@
 import React from 'react'
-import elasticSearchClient from '../services/ElasticSearch'
 
 const numberOfResults = 5
 
@@ -32,18 +31,6 @@ export default class RelationsDrawer extends React.Component {
 
   queryDatabase (from) {
     this.setState({oldSearch: this.props.searchTerm, from: from, totalResults: 0})
-
-    elasticSearchClient.search({
-      q: this.props.searchTerm,
-      index: 'relations',
-      from: from,
-      size: numberOfResults
-    }).then((response) => {
-      this.parseResult(response)
-    }).catch((error) => {
-      this.setState({searchState: 'error'})
-      console.trace(error.message)
-    })
   }
 
   parseResult (result) {
@@ -82,7 +69,7 @@ export default class RelationsDrawer extends React.Component {
               {this.state.searchResult.map(result => (
                 <div className='card' key={key++}>
                   <div className='card-block'>
-                    <h4 className='card-text'><i className='fa fa-quote-left' />{result._source.subject} <strong>{result._source.relation}</strong> {result._source.object}<i className='fa fa-quote-right' /></h4>
+                    <h4 className='card-text'><i className='fa fa-quote-left' /> {result._source.subject} <strong>{result._source.relation}</strong> {result._source.object} <i className='fa fa-quote-right' /></h4>
                   </div>
                 </div>
               ))}
