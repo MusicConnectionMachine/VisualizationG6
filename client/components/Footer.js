@@ -23,7 +23,7 @@ class Footer extends React.Component {
 
   render () {
     return (
-      <div className='container-fluid footer'>
+      <div className='container-fluid footer dark-bg margin-top-5-p'>
         <div className='row'>
           <div className='col-md-3'>
             <ul className='partners'>

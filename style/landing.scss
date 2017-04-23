@@ -35,7 +35,6 @@
 
   img {
     margin-bottom:40px;
-    border:15px solid transparent;
     box-shadow:5px 3px 0 rgba(255,255,255,.6);
   }
 
@@ -43,8 +42,9 @@
     font-size:21px;
     line-height:28px;
   }
+}
 
-  .btn-meflat {
+.btn-meflat {
   border: none;
   font-family: inherit;
   font-size: inherit;
@@ -60,7 +60,7 @@
   height:52px;
   outline: none;
   position: relative;
-  background: #38A5DB !important;
+  background: #38A5DB;
   color: #fff;
   box-shadow: none;
   border-radius: 52px;
@@ -100,5 +100,4 @@
 
 .btn-meflat.icon-right [class*=fa]{
     margin-left:10px;
-}
 }
