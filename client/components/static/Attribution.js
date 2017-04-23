@@ -4,10 +4,12 @@ class Attribution extends React.Component {
   render () {
     return (
       <div className='container-fluid animated fadeIn legalpage'>
-        <h1>Attributions</h1>
-        <p>All third party data, images and text retrieved from third
-        party sources and presented on this website were obtained in accordance with the publisher's license
-        policies.</p>
+        <h1 className='text-center'>Attributions</h1>
+        <p>
+          All third party data, images and text retrieved from third
+          party sources and presented on this website were obtained in accordance with the publisher's license
+          policies.
+        </p>
         <table className='table table-responsive' >
           <tbody>
             <tr>
@@ -17,61 +19,63 @@ class Attribution extends React.Component {
               <th>License</th>
             </tr>
             <tr>
-              <td>A Wiki of Ice and Fire</td>
-              <td>A Wiki of Ice and Fire is a fan-based wiki, dedicated to George R.
-                R. Martin's created universe, covering the Novels, HBO's Game of Thrones TV series and other sources.
-                Our goal is to build this wiki into as complete and comprehensive a guide of that universe as
-                possible. The Wiki is part of the Westeros.org community of fans of the series, that exist since 1999.
+              <td>IMSLP</td>
+              <td>
+                IMSLP stands for the International Music Score Library Project and was started in 2006. The logo on the main page is a capital letter A. It was taken from the beginning of the very first printed book of music, the Harmonice Musices Odhecaton. It was published in Venice in 1501 by Ottaviano Petrucci, the library's namesake.
               </td>
-              <td ><a href='http://awoiaf.westeros.org' target='_blank'>http://awoiaf.westeros.org/</a>
+              <td ><a href='http://imslp.org/' target='_blank'>http://imslp.org/</a>
               </td>
               <td><a href='https://creativecommons.org/licenses/by-sa/2.0/'>CC-BY-SA</a></td>
             </tr>
-            <tr >
-              <td >Game of Thrones wiki</td>
-              <td >Launched in 2006 by founder Jimmy Wales, Wikia Inc. is the home of
-                Fandom and the largest entertainment fan site in the world.
+            <tr>
+              <td>DBPedia</td>
+              <td>DBpedia is a crowd-sourced community effort to extract structured information from Wikipedia and make this information available on the Web. DBpedia allows you to ask sophisticated queries against Wikipedia, and to link the different data sets on the Web to Wikipedia data.
               </td>
-              <td><a href='http://gameofthrones.wikia.com/' target='_blank'>http://gameofthrones.wikia.com/</a>
+              <td><a href='http://dbpedia.org/' target='_blank'>http://dbpedia.org/</a>
               </td>
               <td><a href='https://creativecommons.org/licenses/by-sa/2.0/' target='_blank'>CC-BY-SA</a>
               </td>
             </tr>
-            <tr >
-              <td >404 image</td>
-              <td />
-              <td ><a
-                href='http://vignette4.wikia.nocookie.net/hieloyfuego/images/4/43/Hodor_HBO.jpg/revision/latest?cb=20130815031401'
-                target='_blank' >http://vignette4.wikia.nocookie.net</a></td>
+            <tr>
+              <td >Worldcat</td>
+              <td>
+                WorldCat.org lets you search the collections of libraries in your community and thousands more around the world.
+              </td>
+              <td>
+                <a href='https://www.worldcat.org/' target='_blank'>https://www.worldcat.org/</a>
+              </td>
+              <td>
+                <a href='https://creativecommons.org/licenses/by-sa/2.0/' target='_blank' >CC-BY-SA</a>
+              </td>
+            </tr>
+            <tr>
+              <td>MusicBrainz</td>
+              <td>
+                MusicBrainz is a community-maintained open source encyclopedia of music information.
+              </td>
+              <td><a href='https://musicbrainz.org/' target='_blank'>https://musicbrainz.org/</a>
+              </td>
               <td><a href='https://creativecommons.org/licenses/by-sa/2.0/' target='_blank' >CC-BY-SA</a>
               </td>
             </tr>
-            <tr >
-              <td >MediaWiki</td>
-              <td />
-              <td><a href='http://www.wikia.com/explore' target='_blank'>http://www.wikia.com/explore</a>
+            <tr>
+              <td>AllMusic</td>
+              <td>
+                AllMusic is a comprehensive and in-depth resource for finding out more about the albums, bands, musicians and songs you love.
+              </td>
+              <td><a href='http://www.allmusic.com/' target='_blank'>http://www.allmusic.com/</a>
               </td>
               <td><a href='https://creativecommons.org/licenses/by-sa/2.0/' target='_blank' >CC-BY-SA</a>
               </td>
             </tr>
-            <tr >
-              <td >Wikipedia</td>
-              <td >Wikipedia is a multilingual, web-based, free-content encyclopedia
-                project supported by the Wikimedia Foundation and based on a model of openly editable content.
+            <tr>
+              <td>Tom Hohendorf</td>
+              <td>
+                Tom Hohendorf designed our Icons and Logo.
               </td>
-              <td><a href='https://en.wikipedia.org/wiki/Main_Page' target='_blank'
-                                                     >https://en.wikipedia.org/wiki/Main_Page</a>
+              <td><a href='https://github.com/manekenT' target='_blank'>https://github.com/manekenT</a>
               </td>
-              <td><a href='https://creativecommons.org/licenses/by-sa/2.0/'
-                                                     >CC-BY-SA</a></td>
-            </tr>
-            <tr >
-              <td >Twitter</td>
-              <td >Twitter is an online-social network for short-messages.</td>
-              <td><a href='https://twitter.com' >https://twitter.com</a>
-              </td>
-              <td><a href='https://twitter.com/tos?lang=en#content' target='_blank'
-                                                     >Twitter Terms of Service</a>
+              <td><a href='https://creativecommons.org/licenses/by-sa/2.0/' target='_blank' >CC-BY-SA</a>
               </td>
             </tr>
           </tbody>

@@ -1,4 +1,5 @@
 import React from 'react'
+import {Link} from 'react-router'
 import Header from './Header'
 import groupPhoto from '../../style/img/groupPhoto.jpg'
 import '../../style/about.scss'
@@ -11,13 +12,13 @@ class About extends React.Component {
         <div className='container-fluid animated fadeIn'>
           <img className='group-photo' src={groupPhoto} />
           <div className='row' style={{marginTop: '20px'}}>
-            <div className='col-md-12 text-center'>
+            <div className='col-md-offset-1 col-md-10 text-center'>
               <h3>About the Project</h3>
-              <p className='text-left'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus,
-                itaque, est expedita error aliquid deleniti
-                voluptatem ducimus inventore labore autem beatae molestiae. Deserunt nesciunt dolorum maiores illum cum,
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. A, obcaecati! Quibusdam, voluptate, nulla. Vitae aspernatur amet, modi neque, quis tempore. Labore sunt consectetur odio nemo sint adipisci quam nihil eaque.
-                doloribus laboriosam.
+              <p className='text-left'>
+                This web site is the result of a JavaScript Course at the Technical University of Munich.<br /><br />
+                Information about classical music is scattered all over the internet in the form of scholarly articles, databases, wikis, forums and many other venues.  Our goal is to bring for the first time  ever this knowledge into one place and make it publicly accessible.
+                We summarize the data available about composers, music works and musicians as a set of connections - relationships between composers, relationships between composers and music works, between music works and musicians, composers and locations, dates and much more.
+                The result is a tapestry of information that sums up the knowledge available on the internet about the enchanting world of classical music presented in a fun and interactive way.
               </p>
             </div>
           </div>
@@ -29,10 +30,10 @@ class About extends React.Component {
                   <div className='contributors col-md-6'>
                     <h4>Mentors</h4>
                     <ul>
-                      <li><a href='https://github.com/gyachdav'>Guy Yachdav</a></li>
+                      <li><a href='https://www.linkedin.com/in/gyachdav'>Guy Yachdav</a></li>
                       <li><a href='https://github.com/sacdallago'>Christian Dallago</a></li>
                       <li><a href='https://bruck.me'>Kordan Bruck</a></li>
-                      <li><a href='https://github.com/vviro'>Vladimir</a></li>
+                      <li><a href='https://github.com/vviro'>Vladimir Viro</a></li>
                       <li><a href='https://github.com/pfent'>Philipp Fent</a></li>
                       <li><a href='https://github.com/goldbergtatyana'>Tatyana Goldberg</a></li>
                     </ul>
@@ -74,91 +75,16 @@ class About extends React.Component {
                       <li><a href='https://github.com/yetolas'>Panagiota Revithi</a></li>
                       <li><a href='https://github.com/ysdevys'>Yanko Sabev</a></li>
                       <li><a href='https://github.com/Binabiko'>Jörn von Henning</a></li>
+                      <li><a href='https://github.com/ManekenT'>Tom Hohendorf</a></li>
                     </ul>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-          <div className='row' style={{marginTop: '20px'}}>
-            <div className='container-fluid animated fadeIn legalpage'>
-              <h1 className='text-center'>Attributions</h1>
-              <p>
-                All third party data, images and text retrieved from third
-                party sources and presented on this website were obtained in accordance with the publisher's license
-                policies.
-              </p>
-              <table className='table table-responsive' >
-                <tbody>
-                  <tr>
-                    <th>Source</th>
-                    <th>Description</th>
-                    <th>Reference</th>
-                    <th>License</th>
-                  </tr>
-                  <tr>
-                    <td>IMSLP</td>
-                    <td>
-                      IMSLP stands for the International Music Score Library Project and was started in 2006. The logo on the main page is a capital letter A. It was taken from the beginning of the very first printed book of music, the Harmonice Musices Odhecaton. It was published in Venice in 1501 by Ottaviano Petrucci, the library's namesake.
-                    </td>
-                    <td ><a href='http://imslp.org/' target='_blank'>http://imslp.org/</a>
-                    </td>
-                    <td><a href='https://creativecommons.org/licenses/by-sa/2.0/'>CC-BY-SA</a></td>
-                  </tr>
-                  <tr>
-                    <td>DBPedia</td>
-                    <td>DBpedia is a crowd-sourced community effort to extract structured information from Wikipedia and make this information available on the Web. DBpedia allows you to ask sophisticated queries against Wikipedia, and to link the different data sets on the Web to Wikipedia data.
-                    </td>
-                    <td><a href='http://dbpedia.org/' target='_blank'>http://dbpedia.org/</a>
-                    </td>
-                    <td><a href='https://creativecommons.org/licenses/by-sa/2.0/' target='_blank'>CC-BY-SA</a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td >Worldcat</td>
-                    <td>
-                      WorldCat.org lets you search the collections of libraries in your community and thousands more around the world.
-                    </td>
-                    <td>
-                      <a href='https://www.worldcat.org/' target='_blank'>https://www.worldcat.org/</a>
-                    </td>
-                    <td>
-                      <a href='https://creativecommons.org/licenses/by-sa/2.0/' target='_blank' >CC-BY-SA</a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>MusicBrainz</td>
-                    <td>
-                      MusicBrainz is a community-maintained open source encyclopedia of music information.
-                    </td>
-                    <td><a href='https://musicbrainz.org/' target='_blank'>https://musicbrainz.org/</a>
-                    </td>
-                    <td><a href='https://creativecommons.org/licenses/by-sa/2.0/' target='_blank' >CC-BY-SA</a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>AllMusic</td>
-                    <td>
-                      AllMusic is a comprehensive and in-depth resource for finding out more about the albums, bands, musicians and songs you love.
-                    </td>
-                    <td><a href='http://www.allmusic.com/' target='_blank'>http://www.allmusic.com/</a>
-                    </td>
-                    <td><a href='https://creativecommons.org/licenses/by-sa/2.0/' target='_blank' >CC-BY-SA</a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>Tom Hohendorf</td>
-                    <td>
-                      Tom Hohendorf designed our Icons and Logo.
-                    </td>
-                    <td><a href='https://github.com/manekenT' target='_blank'>https://github.com/manekenT</a>
-                    </td>
-                    <td><a href='https://creativecommons.org/licenses/by-sa/2.0/' target='_blank' >CC-BY-SA</a>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
+          <div className='row text-center' style={{marginTop: '20px'}}>
+            <h3 className=''>Attributions</h3>
+            <p>Sources and Licenses we used are linked on <Link to={'/attribution'}>this page</Link>.</p>
           </div>
         </div>
       </div>
