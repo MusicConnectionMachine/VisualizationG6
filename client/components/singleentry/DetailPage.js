@@ -1,14 +1,17 @@
 import React from 'react'
 import DetailTable from './DetailTable'
 import RelationshipGraph from './RelationshipGraph'
-import Comments from './Comments'
-import elasticSearchClient from '../../services/ElasticSearch'
+import MapWidget from './MapWidget'
+import MCMSearch from '../../services/MCMSearch'
+import Spinner from 'react-spinkit'
 import '../../../style/details.scss'
 
 export default class DetailPage extends React.Component {
 
   constructor (props) {
     super(props)
+
+    this.mcmsearch = new MCMSearch()
 
     this.state = {
       myData: '',
@@ -17,25 +20,11 @@ export default class DetailPage extends React.Component {
   }
 
   componentDidMount () {
-    elasticSearchClient.search({
-      index: 'music',
-      type: this.props.type,
-      body: {
-        query: {
-          match: {
-            _id: this.props.id
-          }
-        }
-      }
-    }).then((response) => {
-      if (response.hits && response.hits.total > 0) {
-        this.setState({myData: response.hits.hits[0]._source, loading: 'done'})
-      } else {
-        this.setState({myData: '', loading: 'error'})
-      }
+    this.mcmsearch.getEntity(this.props.type, this.props.id).then((response) => {
+      this.setState({myData: response, loading: 'done'})
     }).catch((error) => {
       console.trace(error.message)
-      this.setState({myData: '', loading: 'error'})
+      this.setState({myData: null, loading: 'error'})
     })
   }
 
@@ -50,30 +39,37 @@ export default class DetailPage extends React.Component {
       )
     } else if (this.state.loading === 'loading') {
       return (
-        <div className='container-fluid'>
-          <div className='searchMessage margin-top-20-p'>Loading...</div>
+        <div className='parent-center'>
+          <Spinner spinnerName='double-bounce' />
         </div>
       )
     }
     var title
-    if (this.props.type === 'composition') {
-      title = this.state.myData['Work Title']
+    if (this.props.type === 'artists') {
+      title = this.state.myData.name
+    } else if (this.props.type === 'releases') {
+      title = this.state.myData.title
+    } else {
+      title = 'Unknown'
     }
+
     return (
-      <div className='container-fluid'>
-        <div className='margin-top-5-p row'>
+      <div className='container-fluid detailpage'>
+        <div className='row'>
           <h1>
             <a href='javascript:history.back()'><span className='glyphicon glyphicon-circle-arrow-left' /></a> {title}
           </h1>
         </div>
-        <div className='row margin-top-5-p'>
-          <RelationshipGraph type={this.props.type} id={this.props.id} myData={this.state.myData} />
-        </div>
         <div className='row'>
-          <DetailTable type={this.props.type} id={this.props.id} myData={this.state.myData} />
-        </div>
-        <div className='row'>
-          <Comments type={this.props.type} id={this.props.id} myData={this.state.myData} />
+          <div className='col-md-12 margin-top-5-p'>
+            <RelationshipGraph type={this.props.type} id={this.props.id} myData={this.state.myData} />
+          </div>
+          <div className='col-md-6'>
+            <MapWidget type={this.props.type} id={this.props.id} myData={this.state.myData} />
+          </div>
+          <div className='col-md-6'>
+            <DetailTable type={this.props.type} id={this.props.id} myData={this.state.myData} />
+          </div>
         </div>
       </div>
     )

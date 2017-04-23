@@ -16,7 +16,10 @@
   }
 
   .searchResult-icon {
-    font-size: 15pt;
+    width: 15pt;
+    span {
+      font-size: 15pt;
+    }
   }
 
   .searchMessage {

@@ -6,14 +6,37 @@ export default class DetailTable extends React.Component {
     super(props)
 
     var entries = []
+    let defaultEntries = []
 
-    for (var item in props.myData) {
-      if (item !== 'tags') {
+    if (props.type === 'artists') {
+      defaultEntries = [
+        { id: 'name', name: 'Name' },
+        { id: 'dateOfBirth', name: 'Date of Birth' },
+        { id: 'dateOfDeath', name: 'Date of Death' },
+        { id: 'placeOfBirth', name: 'Place of Birth' },
+        { id: 'placeOfDeath', name: 'Place of Death' },
+        { id: 'nationality', name: 'Nationality' }
+      ]
+    } else if (props.type === 'releases') {
+      defaultEntries = [
+        { id: 'title', name: 'Title' }
+      ]
+    }
+    for (var i = 0; i < defaultEntries.length; i++) {
+      let value = props.myData[defaultEntries[i].id]
+      if (value) {
         entries.push({
-          name: item,
-          value: props.myData[item]
+          name: defaultEntries[i].name,
+          value: value
         })
       }
+    }
+
+    if (props.myData.wiki_link || props.myData.source_link) {
+      entries.push({
+        name: 'Further Information',
+        value: (<a href={props.myData.wiki_link} target='_blank'>Wikipedia</a>)
+      })
     }
 
     if (props.myData['tags']) {
@@ -49,7 +72,7 @@ export default class DetailTable extends React.Component {
           <tbody>
             {this.state.entries.map(entry => (
               <tr key={mappingKey++}>
-                <td>
+                <td style={{ whiteSpace: 'nowrap' }}>
                   {entry.name}
                 </td>
                 <td>
