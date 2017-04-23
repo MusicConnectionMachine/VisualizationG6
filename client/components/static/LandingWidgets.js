@@ -11,7 +11,7 @@ const LandingWidgets = React.createClass({
           <div className='row'>
             <div className='col-sm-8 col-sm-offset-2'>
               <img className='img-responsive img-center scrollimation fade-left' src={timelinePhoto} alt='' />
-              <p className='text-center scrollimation fade-in'>I'm curre</p>
+              <p className='text-center scrollimation fade-in'>Test</p>
             </div>
           </div>
           <p className='text-center'><a className='btn btn-meflat scrollto white icon-left' href='#contact'><i className='fa fa-arrow-down' />Hire Me</a></p>
