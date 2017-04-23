@@ -25,7 +25,7 @@ class Attribution extends React.Component {
               </td>
               <td ><a href='http://imslp.org/' target='_blank'>http://imslp.org/</a>
               </td>
-              <td><a href='https://creativecommons.org/licenses/by-sa/2.0/'>CC-BY-SA</a></td>
+              <td><a href='https://creativecommons.org/licenses/by-sa/4.0/'>CC BY-SA 4.0</a></td>
             </tr>
             <tr>
               <td>DBPedia</td>
@@ -33,7 +33,7 @@ class Attribution extends React.Component {
               </td>
               <td><a href='http://dbpedia.org/' target='_blank'>http://dbpedia.org/</a>
               </td>
-              <td><a href='https://creativecommons.org/licenses/by-sa/2.0/' target='_blank'>CC-BY-SA</a>
+              <td><a href='https://creativecommons.org/licenses/by-sa/3.0/' target='_blank'>CC BY-SA 3.0</a>
               </td>
             </tr>
             <tr>
@@ -44,9 +44,7 @@ class Attribution extends React.Component {
               <td>
                 <a href='https://www.worldcat.org/' target='_blank'>https://www.worldcat.org/</a>
               </td>
-              <td>
-                <a href='https://creativecommons.org/licenses/by-sa/2.0/' target='_blank' >CC-BY-SA</a>
-              </td>
+              <td />
             </tr>
             <tr>
               <td>MusicBrainz</td>
@@ -55,7 +53,7 @@ class Attribution extends React.Component {
               </td>
               <td><a href='https://musicbrainz.org/' target='_blank'>https://musicbrainz.org/</a>
               </td>
-              <td><a href='https://creativecommons.org/licenses/by-sa/2.0/' target='_blank' >CC-BY-SA</a>
+              <td><a href='https://creativecommons.org/publicdomain/zero/1.0/' target='_blank' >CC0 1.0</a>
               </td>
             </tr>
             <tr>
@@ -65,8 +63,7 @@ class Attribution extends React.Component {
               </td>
               <td><a href='http://www.allmusic.com/' target='_blank'>http://www.allmusic.com/</a>
               </td>
-              <td><a href='https://creativecommons.org/licenses/by-sa/2.0/' target='_blank' >CC-BY-SA</a>
-              </td>
+              <td />
             </tr>
             <tr>
               <td>Tom Hohendorf</td>
@@ -75,8 +72,7 @@ class Attribution extends React.Component {
               </td>
               <td><a href='https://github.com/manekenT' target='_blank'>https://github.com/manekenT</a>
               </td>
-              <td><a href='https://creativecommons.org/licenses/by-sa/2.0/' target='_blank' >CC-BY-SA</a>
-              </td>
+              <td />
             </tr>
           </tbody>
         </table>
