@@ -2,7 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { setSearchTerm } from '../states/actionCreators'
 import Autocomplete from 'react-autocomplete'
-const { object, string, func } = React.PropTypes
+const { object, string, func, bool } = React.PropTypes
 
 class Searchbar extends React.Component {
 
@@ -117,13 +117,13 @@ class Searchbar extends React.Component {
   render () {
     return (
       <div className='searchbar animated fadeIn'>
-        <form className='parent-center' onSubmit={this.handleSearchSubmit}>
+        <form onSubmit={this.handleSearchSubmit}>
           <Autocomplete
             getItemValue={this.getItemValue}
             inputProps={{
               type: 'search',
               className: 'form-control',
-              placeholder: 'Search for composers, musicians and music works.'
+              placeholder: 'Search...'
             }}
             items={this.state.suggestions}
             onChange={this.handleSearchTermChange}
@@ -142,6 +142,7 @@ class Searchbar extends React.Component {
             wrapperStyle={{}}
             value={this.state.searchTerm}
           />
+          { this.props.displayHelpText ? (<span className='help-block'>Search for composers, music works and musicians</span>) : null}
         </form>
       </div>
     )
@@ -150,7 +151,8 @@ class Searchbar extends React.Component {
 
 Searchbar.propTypes = {
   searchTerm: string,
-  dispatch: func
+  dispatch: func,
+  displayHelpText: bool
 }
 
 Searchbar.contextTypes = {

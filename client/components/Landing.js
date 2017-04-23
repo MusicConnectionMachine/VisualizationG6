@@ -13,8 +13,8 @@ const Landing = React.createClass({
           <div className='center-block text-center text-white margin-top-10-p animated fadeIn'>
             <img src={headerImage} alt='Music Connection Machine Logo' />
           </div>
-          <div className='row margin-top-20-p'>
-            <Searchbar />
+          <div className='row margin-top-10-p'>
+            <Searchbar displayHelpText />
           </div>
         </div>
       </div>
