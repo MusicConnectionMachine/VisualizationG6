@@ -1,4 +1,5 @@
 import $ from 'jquery'
+import apitoken from './apitoken.txt'
 const api = 'http://mcmapi.azurewebsites.net'
 
 export default class MCMSearch {
@@ -8,7 +9,7 @@ export default class MCMSearch {
     let promise = $.ajax({
       type: 'GET',
       headers: {
-        'API-KEY': '123'
+        'API-KEY': apitoken
       },
       url: getRequest
     })
@@ -21,7 +22,7 @@ export default class MCMSearch {
     let promise = $.ajax({
       type: 'GET',
       headers: {
-        'API-KEY': '123'
+        'API-KEY': apitoken
       },
       url: getRequest
     })
