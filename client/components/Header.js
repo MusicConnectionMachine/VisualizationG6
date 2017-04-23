@@ -8,17 +8,7 @@ import 'bootstrap/js/collapse'
 class Header extends React.Component {
   render () {
     let location = window.location.pathname
-    let utilSpace, colClass
-    if (location !== '/') {
-      utilSpace = (
-        <div className='navbar-form navbar-right'>
-          <Searchbar />
-        </div>
-      )
-      colClass = ''
-    } else {
-      colClass = ''
-    }
+
     return (
       <nav className='navbar navbar-default navbar-fixed-top'>
         <div className='tum-header row'>
@@ -40,13 +30,15 @@ class Header extends React.Component {
               <img src={McmLogo} style={{maxHeight: '40px', paddingTop: '5px'}} />
             </Link>
           </div>
-          <div className={'collapse navbar-collapse ' + colClass} id='navbar'>
+          <div className={'collapse navbar-collapse '} id='navbar'>
             <ul className='nav navbar-nav nav-menu'>
               <li className=''><a href='http://54.68.164.199:8083' target='_blank'>Plugins</a></li>
               <li className=''><a href='https://github.com/MusicConnectionMachine/api' target='_blank'>API</a></li>
               <li className={(location.indexOf('about') > 0 ? 'selected' : '')}><Link className='' to='/about'>About</Link></li>
             </ul>
-            {utilSpace}
+            <div className='navbar-form navbar-right'>
+              <Searchbar />
+            </div>
           </div>
         </div>
       </nav>
