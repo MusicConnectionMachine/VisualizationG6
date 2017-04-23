@@ -32,7 +32,7 @@ class About extends React.Component {
                     <ul>
                       <li><a href='https://www.linkedin.com/in/gyachdav'>Guy Yachdav</a></li>
                       <li><a href='https://github.com/sacdallago'>Christian Dallago</a></li>
-                      <li><a href='https://bruck.me'>Kordan Bruck</a></li>
+                      <li><a href='https://bruck.me'>Kordian Bruck</a></li>
                       <li><a href='https://github.com/vviro'>Vladimir Viro</a></li>
                       <li><a href='https://github.com/pfent'>Philipp Fent</a></li>
                       <li><a href='https://github.com/goldbergtatyana'>Tatyana Goldberg</a></li>
