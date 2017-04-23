@@ -1,6 +1,7 @@
 import React from 'react'
 import Searchbar from './Searchbar'
 import Header from './Header'
+import LandingWidgets from './static/LandingWidgets'
 import headerImage from '../../style/img/logo/logo-landing.svg'
 import '../../style/landing.scss'
 
@@ -17,6 +18,7 @@ const Landing = React.createClass({
             <Searchbar displayHelpText />
           </div>
         </div>
+        <LandingWidgets />
       </div>
     )
   }
