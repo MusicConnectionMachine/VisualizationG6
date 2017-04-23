@@ -33,6 +33,7 @@ class Header extends React.Component {
           <div className={'collapse navbar-collapse '} id='navbar'>
             <ul className='nav navbar-nav nav-menu'>
               <li className={(location === '/' ? 'selected' : '')}><Link className='' to='/'>Home</Link></li>
+              <li className={(location.indexOf('search') > 0 ? 'selected' : '')}><Link to='/search'>Search</Link></li>
               <li className={(location.indexOf('about') > 0 ? 'selected' : '')}><Link className='' to='/about'>About</Link></li>
               <li className={(location.indexOf('statistics') > 0 ? 'selected' : '')}><Link className='' to='/statistics'>Statistics</Link></li>
               <li className={(location.indexOf('embed') > 0 ? 'selected' : '')}><Link className='' to='/embed'>Embed</Link></li>
