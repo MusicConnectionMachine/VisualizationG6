@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from 'react-router'
 import Searchbar from './Searchbar'
 import TumLogo from '../../style/img/TUM_Web_Logo_neg.svg'
+import McmLogo from '../../style/img/logo/logo-menu.svg'
 import 'bootstrap/js/collapse'
 
 class Header extends React.Component {
@@ -36,7 +37,7 @@ class Header extends React.Component {
               <span className='icon-bar' />
             </button>
             <Link className='navbar-brand parent-center' to='/'>
-              <h2>MusicConnectionMachine</h2>
+              <img src={McmLogo} style={{maxHeight: '40px', paddingTop: '5px'}} />
             </Link>
           </div>
           <div className={'collapse navbar-collapse ' + colClass} id='navbar'>
