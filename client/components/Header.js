@@ -2,22 +2,13 @@ import React from 'react'
 import { Link } from 'react-router'
 import Searchbar from './Searchbar'
 import TumLogo from '../../style/img/TUM_Web_Logo_neg.svg'
+import McmLogo from '../../style/img/logo/logo-menu.svg'
 import 'bootstrap/js/collapse'
 
 class Header extends React.Component {
   render () {
     let location = window.location.pathname
-    let utilSpace, colClass
-    if (location !== '/') {
-      utilSpace = (
-        <div className='navbar-form navbar-right'>
-          <Searchbar />
-        </div>
-      )
-      colClass = ''
-    } else {
-      colClass = ''
-    }
+
     return (
       <nav className='navbar navbar-default navbar-fixed-top'>
         <div className='tum-header row'>
@@ -36,16 +27,20 @@ class Header extends React.Component {
               <span className='icon-bar' />
             </button>
             <Link className='navbar-brand parent-center' to='/'>
-              <h2>MusicConnectionMachine</h2>
+              <img src={McmLogo} style={{maxHeight: '40px', paddingTop: '5px'}} />
             </Link>
           </div>
-          <div className={'collapse navbar-collapse ' + colClass} id='navbar'>
+          <div className={'collapse navbar-collapse '} id='navbar'>
             <ul className='nav navbar-nav nav-menu'>
-              <li className=''><a href='http://54.68.164.199:8083' target='_blank'>Plugins</a></li>
-              <li className=''><a href='https://github.com/MusicConnectionMachine/api' target='_blank'>API</a></li>
+              <li className={(location === '/' ? 'selected' : '')}><Link className='' to='/'>Home</Link></li>
+              <li className={(location.indexOf('search') > 0 ? 'selected' : '')}><Link to='/search'>Search</Link></li>
               <li className={(location.indexOf('about') > 0 ? 'selected' : '')}><Link className='' to='/about'>About</Link></li>
+              <li className={(location.indexOf('statistics') > 0 ? 'selected' : '')}><Link className='' to='/statistics'>Statistics</Link></li>
+              <li className={(location.indexOf('embed') > 0 ? 'selected' : '')}><Link className='' to='/embed'>Embed</Link></li>
             </ul>
-            {utilSpace}
+            <div className='navbar-form navbar-right hidden-sm hidden-xs'>
+              <Searchbar />
+            </div>
           </div>
         </div>
       </nav>

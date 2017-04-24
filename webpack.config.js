@@ -6,7 +6,8 @@ const HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
   filename: 'index.html',
   inject: 'body',
   hash: true,
-  xhtml: true
+  xhtml: true,
+  favicon: './style/img/logo/favicon-32x32.png'
 })
 
 const GitRevisionPlugin = require('git-revision-webpack-plugin');
@@ -100,6 +101,10 @@ module.exports = {
       {
         test: /\.(eot|ttf|woff|woff2)$/,
         loader: 'url-loader?name=fonts/[name].[ext]&publicPath=/public/'
+      },
+      {
+        test: /\.txt$/,
+        loader: 'raw-loader'
       }
     ]
   },

@@ -18,7 +18,7 @@ html {
 }
 
 body {
-  padding-top: 104pt;
+  padding-top: 120px;
   background: url('./img/background-icon-patterns-white.svg');
   background-position: top left;
   background-attachment: fixed;
@@ -30,4 +30,8 @@ body {
 
 .main-container {
   min-height: 68vh;
+  margin-bottom: 25px;
+  background-color: white;
+  box-shadow: 0 2px 5px 0 rgba(0,0,0,.16),0 2px 10px 0 rgba(0,0,0,.12);
+  padding: 15px 0;
 }

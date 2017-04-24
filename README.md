@@ -5,7 +5,7 @@ In this repository we will build a visualization of the other teams aggregated d
 
 ## Demo
 
-You can checkout the newest development stage [here](http://webpageg6.8ed630ce.svc.dockerapp.io).
+You can checkout the newest development stage here: [mcmfrontend.azurewebsites.net](http://mcmfrontend.azurewebsites.net).
 
 ## Run Project
 
