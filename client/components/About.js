@@ -10,10 +10,12 @@ class About extends React.Component {
       <div className='about'>
         <Header />
         <div className='container-fluid animated fadeIn'>
+          <div className='row text-center'>
+            <h3>About the Project</h3>
+          </div>
           <img className='group-photo' src={groupPhoto} />
           <div className='row' style={{marginTop: '20px'}}>
-            <div className='col-md-offset-1 col-md-10 text-center'>
-              <h3>About the Project</h3>
+            <div className='col-md-offset-0 col-md-12 text-center'>
               <p className='text-left'>
                 The Music Connection Machine has been developed within the JavaScript Course at the Technical University of Munich.<br /><br />
                 Information about classical music is scattered all over the internet in the form of scholarly articles, news stories, blogs, wikis, forums and many other venues.
