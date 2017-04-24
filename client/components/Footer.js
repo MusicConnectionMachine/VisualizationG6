@@ -53,8 +53,8 @@ class Footer extends React.Component {
           <div className='col-sm-2'>
             Version: {this.state.version}
           </div>
-          <div className='col-sm-3 pull-right'>
-            <Link to='/'><i className='fa fa-copyright' aria-hidden='true' />&nbsp;2017 Javascript Technology Seminar</Link>
+          <div className='col-sm-8 pull-right'>
+            <Link className='pull-right' to='/'><i className='fa fa-copyright' aria-hidden='true' />&nbsp;2017 Javascript Technology Seminar</Link>
           </div>
         </div>
       </div>
