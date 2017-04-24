@@ -34,9 +34,9 @@ class Header extends React.Component {
             <ul className='nav navbar-nav nav-menu'>
               <li className={(location === '/' ? 'selected' : '')}><Link className='' to='/'>Home</Link></li>
               <li className={(location.indexOf('search') > 0 ? 'selected' : '')}><Link to='/search'>Search</Link></li>
-              <li className={(location.indexOf('about') > 0 ? 'selected' : '')}><Link className='' to='/about'>About</Link></li>
-              <li className={(location.indexOf('statistics') > 0 ? 'selected' : '')}><Link className='' to='/statistics'>Statistics</Link></li>
               <li className={(location.indexOf('embed') > 0 ? 'selected' : '')}><Link className='' to='/embed'>Embed</Link></li>
+              <li className={(location.indexOf('statistics') > 0 ? 'selected' : '')}><Link className='' to='/statistics'>Statistics</Link></li>
+              <li className={(location.indexOf('about') > 0 ? 'selected' : '')}><Link className='' to='/about'>About</Link></li>
             </ul>
             <div className='navbar-form navbar-right hidden-sm hidden-xs'>
               <Searchbar />
