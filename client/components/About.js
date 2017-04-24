@@ -10,12 +10,9 @@ class About extends React.Component {
       <div className='about'>
         <Header />
         <div className='container-fluid animated fadeIn'>
-          <div className='row text-center'>
-            <h3>About the Project</h3>
-          </div>
-          <img className='group-photo' src={groupPhoto} />
-          <div className='row' style={{marginTop: '20px'}}>
+          <div className='row'>
             <div className='col-md-offset-0 col-md-12 text-center'>
+              <h3>About the Project</h3>
               <p className='text-left'>
                 The Music Connection Machine has been developed within the JavaScript Course at the Technical University of Munich.<br /><br />
                 Information about classical music is scattered all over the internet in the form of scholarly articles, news stories, blogs, wikis, forums and many other venues.
@@ -26,6 +23,9 @@ class About extends React.Component {
                 The result is a tapestry of information that sums up the knowledge available on the internet about the enchanting world of classical music presented in a fun and interactive way.
               </p>
             </div>
+          </div>
+          <div className='row' style={{marginTop: '20px'}}>
+            <img className='group-photo' src={groupPhoto} />
           </div>
           <div className='row' style={{marginTop: '20px'}}>
             <div className='col-md-12'>
@@ -50,14 +50,14 @@ class About extends React.Component {
                       <li><a href='https://github.com/ShilpaGhanashyamGore'>Shilpa Ghanashyam Gore</a></li>
                       <li><a href='https://github.com/angelinrashmi2000'>Angelin Rashmi</a></li>
                       <li><a href='https://github.com/TimHenkelmann'>Tim Henkelmann</a></li>
-                      <li><a href='https://github.com/lgfrbcsgo'>Felix Schorer</a></li>
+                      <li><a href='https://github.com/felixschorer'>Felix Schorer</a></li>
                       <li><a href='https://github.com/anshul0708'>Anshul Sharma</a></li>
                       <li><a href='https://github.com/nyxathid'>Nikita Basargin</a></li>
                       <li><a href='https://github.com/lukasstreit'>Lukas Streit</a></li>
                     </ul>
                   </div>
                   <div className='contributors col-md-6'>
-                    <h4>Defining Relationships</h4>
+                    <h4>Mining Relationships</h4>
                     <ul>
                       <li><a href='https://github.com/krishenk'>Krishen Kant Kandwal</a></li>
                       <li><a href='https://github.com/ansjin'>Anshul Jindal</a></li>
