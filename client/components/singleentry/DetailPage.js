@@ -1,10 +1,9 @@
 import React from 'react'
 import DetailTable from './DetailTable'
-import RelationshipGraph from './RelationshipGraph'
-import MapWidget from './MapWidget'
 import MCMSearch from '../../services/MCMSearch'
 import Spinner from 'react-spinkit'
 import '../../../style/details.scss'
+import WidgetComponent from '../WidgetComponent'
 
 export default class DetailPage extends React.Component {
 
@@ -61,14 +60,23 @@ export default class DetailPage extends React.Component {
           </h1>
         </div>
         <div className='row'>
-          <div className='col-md-12 margin-top-5-p'>
-            <RelationshipGraph type={this.props.type} id={this.props.id} myData={this.state.myData} />
-          </div>
-          <div className='col-md-6'>
-            <MapWidget type={this.props.type} id={this.props.id} myData={this.state.myData} />
-          </div>
-          <div className='col-md-6'>
+          <div className='col-md-12'>
             <DetailTable type={this.props.type} id={this.props.id} myData={this.state.myData} />
+          </div>
+        </div>
+        <div className='row'>
+          <div className='col-md-12 margin-top-5-p'>
+            <WidgetComponent entityId={this.props.id} entityType={this.props.type} widgetType='relations' />
+          </div>
+        </div>
+        <div className='row'>
+          <div className='col-md-12 margin-top-5-p'>
+            <WidgetComponent entityId={this.props.id} entityType={this.props.type} widgetType='map' />
+          </div>
+        </div>
+        <div className='row'>
+          <div className='col-md-12 margin-top-5-p'>
+            <WidgetComponent entityId={this.props.id} entityType={this.props.type} widgetType='timeline' />
           </div>
         </div>
       </div>
