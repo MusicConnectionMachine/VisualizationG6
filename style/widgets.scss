@@ -1,0 +1,13 @@
+.widget {
+  height: 400px;
+  width: 100%;
+
+  &--full-screen {
+    height: 99vh;
+    width: 99vw;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 999999;
+  }
+}
