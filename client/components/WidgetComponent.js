@@ -4,7 +4,7 @@ import '../../style/widgets.scss'
 const WIDGET_URLS = {
   timeline: 'http://mcmwidgets.azurewebsites.net/widgets/timeline-app.html?useMockups',
   relations: 'http://mcmwidgets.azurewebsites.net/widgets/relations-widget.html?useMockups',
-  map: 'http://mcmwidgets.azurewebsites.net/widgets/map-app.html?useMockups'
+  map: 'http://mcmwidgets.azurewebsites.net/widgets/map-app.html?'
 }
 
 export default class WidgetComponent extends React.Component {
@@ -31,9 +31,10 @@ export default class WidgetComponent extends React.Component {
 
   render () {
     const { entityId, entityType, widgetType } = this.props
+    const entityTypeWithoutS = entityType.substring(0, entityType.length - 1)
     return (
       <iframe
-        src={`${WIDGET_URLS[widgetType]}&entityId=${entityId}&entityType=${entityType}`}
+        src={`${WIDGET_URLS[widgetType]}&entityId=${entityId}&entityType=${entityTypeWithoutS}`}
         className={`widget ${this.state.fullscreen ? 'widget--full-screen' : ''}`}
         frameBorder='0'
       />
