@@ -10,14 +10,19 @@ class About extends React.Component {
       <div className='about'>
         <Header />
         <div className='container-fluid animated fadeIn'>
+          <div className='row text-center'>
+            <h3>About the Project</h3>
+          </div>
           <img className='group-photo' src={groupPhoto} />
           <div className='row' style={{marginTop: '20px'}}>
-            <div className='col-md-offset-1 col-md-10 text-center'>
-              <h3>About the Project</h3>
+            <div className='col-md-offset-0 col-md-12 text-center'>
               <p className='text-left'>
-                This web site is the result of a JavaScript Course at the Technical University of Munich.<br /><br />
-                Information about classical music is scattered all over the internet in the form of scholarly articles, databases, wikis, forums and many other venues.  Our goal is to bring for the first time  ever this knowledge into one place and make it publicly accessible.
-                We summarize the data available about composers, music works and musicians as a set of connections - relationships between composers, relationships between composers and music works, between music works and musicians, composers and locations, dates and much more.
+                The Music Connection Machine has been developed within the JavaScript Course at the Technical University of Munich.<br /><br />
+                Information about classical music is scattered all over the internet in the form of scholarly articles, news stories, blogs, wikis, forums and many other venues.
+                Our goal is to bring this knowledge into one place and make it easily accessible.
+                We summarize the information about composers, musicians and music works as a set of connections -
+                what were the musicians saying about each other and the music works, and what anybody else has written about them online.
+                Moreover, whenever we find temporal  or location-based  information, we can present this  information in geographic and historic context.
                 The result is a tapestry of information that sums up the knowledge available on the internet about the enchanting world of classical music presented in a fun and interactive way.
               </p>
             </div>
