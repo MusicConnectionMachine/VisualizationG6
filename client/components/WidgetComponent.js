@@ -1,10 +1,11 @@
 import React from 'react'
 import '../../style/widgets.scss'
+import { widgetsHost } from '../config'
 
 const WIDGET_URLS = {
-  timeline: 'http://mcmwidgets.azurewebsites.net/widgets/timeline-app.html?useMockups',
-  relations: 'http://mcmwidgets.azurewebsites.net/widgets/relations-widget.html?useMockups',
-  map: 'http://mcmwidgets.azurewebsites.net/widgets/map-app.html?'
+  timeline: `${widgetsHost}/timeline-app.html?useMockups`,
+  relations: `${widgetsHost}/relations-widget.html?useMockups`,
+  map: `${widgetsHost}/map-app.html?`
 }
 
 export default class WidgetComponent extends React.Component {

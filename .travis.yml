@@ -9,13 +9,15 @@ git:
 services:
   - docker
 before_install:
-  - sed -i 's/git@github.com:/https:\/\/github.com\//' .gitmodules
-  - git submodule update --init --recursive
+  - git submodule update --recursive --init
+  - git submodule update --recursive --remote
   - yarn global add webpack@v2.1.0-beta.25
   - yarn global add standard@v8.4.0
   - yarn
+  - cd VisualizationG5/react && yarn && cd ../..
 install:
   - yarn build
+  - cd VisualizationG5/react && yarn run build && cd ../..
   - docker build -t rostlabazure/webpageg6 .
 after_success:
   - if [ "$TRAVIS_BRANCH" == "develop" ]; then

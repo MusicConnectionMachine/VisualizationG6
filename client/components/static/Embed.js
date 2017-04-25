@@ -1,6 +1,7 @@
 import React from 'react'
 import '../../../style/embed.scss'
 import WidgetComponent from '../WidgetComponent'
+import { widgetsHost } from '../../config'
 
 const Embed = React.createClass({
   render () {
@@ -60,7 +61,7 @@ const Embed = React.createClass({
           <figure className='highlight'>
             <pre>
               <code className='language-html' data-lang='html'>
-                <div>{"function startWidget(widgetName, rootElement) { \n  const scripts = document.createElement('script'); \n  scripts.src = 'http://mcmwidgets.azurewebsites.net/widgets.js'; \n  scripts.type = 'text/javascript'; \n  scripts.onload = function() { \n    MCMWidgets.init({ widget: widgetName, rootElement: rootElement }); \n  }; \n  document.getElementsByTagName('head')[0].append(scripts); \n}\nstartWidget('timeline', document.getElementById('widget'));"} </div>
+                <div>{`function startWidget(widgetName, rootElement) { \n  const scripts = document.createElement('script'); \n  scripts.src = '${widgetsHost}/widgets.js'; \n  scripts.type = 'text/javascript'; \n  scripts.onload = function() { \n    MCMWidgets.init({ widget: widgetName, rootElement: rootElement }); \n  }; \n  document.getElementsByTagName('head')[0].append(scripts); \n}\nstartWidget('timeline', document.getElementById('widget'));`} </div>
               </code>
             </pre>
           </figure>
