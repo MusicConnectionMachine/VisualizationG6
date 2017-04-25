@@ -35,52 +35,53 @@ class About extends React.Component {
                   <div className='contributors col-md-6'>
                     <h4>Mentors</h4>
                     <ul>
-                      <li><a href='https://www.linkedin.com/in/gyachdav'>Guy Yachdav</a></li>
+                      <li><a href='https://www.linkedin.com/in/burkhard-rost-b3ba9449/?ppe=1'>Burkhard Rost</a></li>
                       <li><a href='https://github.com/sacdallago'>Christian Dallago</a></li>
+                      <li><a href='https://www.linkedin.com/in/gyachdav'>Guy Yachdav</a></li>
                       <li><a href='https://bruck.me'>Kordian Bruck</a></li>
-                      <li><a href='https://github.com/vviro'>Vladimir Viro</a></li>
                       <li><a href='https://github.com/pfent'>Philipp Fent</a></li>
                       <li><a href='https://github.com/goldbergtatyana'>Tatyana Goldberg</a></li>
+                      <li><a href='https://github.com/vviro'>Vladimir Viro</a></li>
                     </ul>
                   </div>
                   <div className='contributors col-md-6'>
                     <h4>Data Aggregation</h4>
                     <ul>
-                      <li><a href='https://github.com/LukasNavickas'>Lukas Navickas</a></li>
-                      <li><a href='https://github.com/ShilpaGhanashyamGore'>Shilpa Ghanashyam Gore</a></li>
                       <li><a href='https://github.com/angelinrashmi2000'>Angelin Rashmi</a></li>
-                      <li><a href='https://github.com/TimHenkelmann'>Tim Henkelmann</a></li>
-                      <li><a href='https://github.com/felixschorer'>Felix Schorer</a></li>
                       <li><a href='https://github.com/anshul0708'>Anshul Sharma</a></li>
-                      <li><a href='https://github.com/nyxathid'>Nikita Basargin</a></li>
+                      <li><a href='https://github.com/felixschorer'>Felix Schorer</a></li>
+                      <li><a href='https://github.com/LukasNavickas'>Lukas Navickas</a></li>
                       <li><a href='https://github.com/lukasstreit'>Lukas Streit</a></li>
+                      <li><a href='https://github.com/nyxathid'>Nikita Basargin</a></li>
+                      <li><a href='https://github.com/ShilpaGhanashyamGore'>Shilpa Ghanashyam Gore</a></li>
+                      <li><a href='https://github.com/TimHenkelmann'>Tim Henkelmann</a></li>
                     </ul>
                   </div>
                   <div className='contributors col-md-6'>
                     <h4>Mining Relationships</h4>
                     <ul>
-                      <li><a href='https://github.com/krishenk'>Krishen Kant Kandwal</a></li>
                       <li><a href='https://github.com/ansjin'>Anshul Jindal</a></li>
-                      <li><a href='https://github.com/Henni'>Hendrik Leppelsack</a></li>
-                      <li><a href='https://github.com/RBirkeland'>René Birkeland</a></li>
                       <li><a href='https://github.com/FelsyWaschbaer'>Daniel Schubert</a></li>
+                      <li><a href='https://github.com/Henni'>Hendrik Leppelsack</a></li>
+                      <li><a href='https://github.com/krishenk'>Krishen Kant Kandwal</a></li>
+                      <li><a href='https://github.com/Gillian0023'>Lin Ji</a></li>
+                      <li><a href='https://github.com/RBirkeland'>René Birkeland</a></li>
                       <li><a href='https://github.com/Sandr00'>Sandro Bauer</a></li>
                       <li><a href='https://github.com/simonzachau'>Simon Zachau</a></li>
-                      <li><a href='https://github.com/Gillian0023'>Lin Ji</a></li>
                     </ul>
                   </div>
                   <div className='contributors col-md-6'>
                     <h4>Visualization</h4>
                     <ul>
                       <li><a href='https://github.com/chaoran-chen'>Chaoran Chen</a></li>
-                      <li><a href='https://github.com/lustoykov'>Lyubomir Stoykov</a></li>
-                      <li><a href='https://github.com/martomi'>Martin Mihaylov</a></li>
                       <li><a href='https://github.com/demirdagemir'>Emir Demirdag</a></li>
-                      <li><a href='https://github.com/syncall'>Markus Sosnowski</a></li>
-                      <li><a href='https://github.com/yetolas'>Panagiota Revithi</a></li>
-                      <li><a href='https://github.com/ysdevys'>Yanko Sabev</a></li>
                       <li><a href='https://github.com/Binabiko'>Jörn von Henning</a></li>
+                      <li><a href='https://github.com/lustoykov'>Lyubomir Stoykov</a></li>
+                      <li><a href='https://github.com/syncall'>Markus Sosnowski</a></li>
+                      <li><a href='https://github.com/martomi'>Martin Mihaylov</a></li>
+                      <li><a href='https://github.com/yetolas'>Panagiota Revithi</a></li>
                       <li><a href='https://github.com/ManekenT'>Tom Hohendorf</a></li>
+                      <li><a href='https://github.com/ysdevys'>Yanko Sabev</a></li>
                     </ul>
                   </div>
                 </div>

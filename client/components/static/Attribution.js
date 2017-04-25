@@ -74,6 +74,21 @@ class Attribution extends React.Component {
               </td>
               <td />
             </tr>
+            <tr>
+              <td>Flaticon</td>
+              <td>
+                Icons used in our Widgets.
+              </td>
+              <td>
+                <a href='http://www.flaticon.com/authors/dave-gandy' target='_blank'>Icon for marking external Links</a> <br />
+                <a href='http://www.flaticon.com/authors/dave-gandy' target='_blank'>Full-screen icon</a> <br />
+                <a href='http://www.flaticon.com/authors/dave-gandy' target='_blank'>Minimize icon</a> <br />
+                <a href='http://www.flaticon.com/authors/dave-gandy' target='_blank'>Download icon</a> <br />
+                <a href='http://www.flaticon.com/authors/dave-gandy' target='_blank'>Flag icon</a> <br />
+                <a href='http://www.flaticon.com/authors/dave-gandy' target='_blank'>Source icon</a> <br />
+              </td>
+              <td />
+            </tr>
           </tbody>
         </table>
       </div>

@@ -45,7 +45,7 @@ const Embed = React.createClass({
           </div>
           <div id='mapComponent'>
             <h2>Map Component</h2>
-            <WidgetComponent entityType='artists' entityId='bb5e41c0-a0ad-4f38-8ee8-2f784a791e67' widgetType='map' />
+            <WidgetComponent entityType='artists' entityId='f92cf440-6932-4791-90e3-747abecf8f83' widgetType='map' />
           </div>
         </div>
         <div id='embedding'>
