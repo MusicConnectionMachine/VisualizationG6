@@ -1,3 +1,4 @@
+import jquery from 'jquery'
 import React from 'react'
 import { Link } from 'react-router'
 import Searchbar from './Searchbar'
@@ -6,8 +7,25 @@ import McmLogo from '../../style/img/logo/logo-menu.svg'
 import 'bootstrap/js/collapse'
 
 class Header extends React.Component {
+  constructor (props) {
+    super(props)
+    this.onMenuLinkClicked = this.onMenuLinkClicked.bind(this)
+  }
+
+  onMenuLinkClicked (e) {
+    e.preventDefault()
+    jquery('.navbar-collapse').collapse('hide')
+    this.context.router.transitionTo(e.target.getAttribute('href'))
+  }
+
   render () {
     let location = window.location.pathname
+    const pages = [
+      { path: 'search', name: 'Search' },
+      { path: 'embed', name: 'Embed' },
+      { path: 'statistics', name: 'Statistics' },
+      { path: 'about', name: 'About' }
+    ]
 
     return (
       <nav className='navbar navbar-default navbar-fixed-top'>
@@ -32,11 +50,12 @@ class Header extends React.Component {
           </div>
           <div className={'collapse navbar-collapse '} id='navbar'>
             <ul className='nav navbar-nav nav-menu'>
-              <li className={(location === '/' ? 'selected' : '')}><Link className='' to='/'>Home</Link></li>
-              <li className={(location.indexOf('search') > 0 ? 'selected' : '')}><Link to='/search'>Search</Link></li>
-              <li className={(location.indexOf('embed') > 0 ? 'selected' : '')}><Link className='' to='/embed'>Embed</Link></li>
-              <li className={(location.indexOf('statistics') > 0 ? 'selected' : '')}><Link className='' to='/statistics'>Statistics</Link></li>
-              <li className={(location.indexOf('about') > 0 ? 'selected' : '')}><Link className='' to='/about'>About</Link></li>
+              <li className={(location === '/' ? 'selected' : '')}><Link onClick={this.onMenuLinkClicked} to='/'>Home</Link></li>
+              {pages.map(({ path, name }) => (
+                <li key={path} className={(location.indexOf(path) > 0 ? 'selected' : '')}>
+                  <Link onClick={this.onMenuLinkClicked} to={`/${path}`}>{name}</Link>
+                </li>
+              ))}
             </ul>
             <div className='navbar-form navbar-right hidden-sm hidden-xs'>
               <Searchbar />
@@ -51,6 +70,10 @@ class Header extends React.Component {
 const { bool } = React.PropTypes
 Header.propTypes = {
   showSearch: bool
+}
+
+Header.contextTypes = {
+  router: React.PropTypes.object
 }
 
 export default Header
