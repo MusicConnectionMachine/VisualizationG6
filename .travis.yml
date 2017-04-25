@@ -9,7 +9,6 @@ git:
 services:
   - docker
 before_install:
-  - sed -i 's/git@github.com:/https:\/\/github.com\//' .gitmodules
   - git submodule update --recursive --init
   - git submodule update --recursive --remote
   - yarn global add webpack@v2.1.0-beta.25
