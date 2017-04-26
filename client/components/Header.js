@@ -5,6 +5,7 @@ import Searchbar from './Searchbar'
 import TumLogo from '../../style/img/TUM_Web_Logo_neg.svg'
 import McmLogo from '../../style/img/logo/logo-menu.svg'
 import 'bootstrap/js/collapse'
+import '../../style/header.scss'
 
 class Header extends React.Component {
   constructor (props) {
