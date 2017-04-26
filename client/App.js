@@ -5,10 +5,8 @@ import { BrowserRouter, Match } from 'react-router'
 import { Provider } from 'react-redux'
 import store from './states/store'
 import 'bootstrap/dist/css/bootstrap.css'
-import 'bootstrap/js/collapse'
 import 'mdbootstrap/css/mdb.min.css'
 import '../style/index.scss'
-import Landing from './components/Landing'
 import Header from './components/Header'
 import Footer from './components/Footer'
 
@@ -20,7 +18,9 @@ const App = React.createClass({
           <div>
             <Header />
             <div className='container main-container'>
-              <Match exactly pattern='/' component={Landing} />
+              <Match exactly pattern='/' component={() => {
+                return <Bundle load={() => import('./components/Landing')} />
+              }} />
               <Match pattern='/details/:type/:id'
                 component={(props) => {
                   return <Bundle type={props.params.type} id={props.params.id} load={() => import('./components/singleentry/DetailPage')} />

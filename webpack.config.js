@@ -1,11 +1,11 @@
 const path = require('path')
+var webpack = require('webpack');
 
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
   template: './index_template.html',
   filename: 'index.html',
   inject: 'body',
-  hash: true,
   xhtml: true,
   favicon: './style/img/logo/favicon-32x32.png'
 })
@@ -17,12 +17,16 @@ const GitRevisionPluginConfig = new GitRevisionPlugin({
 
 module.exports = {
   context: __dirname,
-  entry: './client/App.js',
+  entry: {
+    bundle: './client/App.js',
+    vendor: ['jquery', 'react', 'react-dom', 'react-router', 'react-redux']
+  },
   devtool: 'eval',
   output: {
     path: path.join(__dirname, '/public'),
-    filename: 'bundle.js',
-    publicPath: "/"
+    filename: '[hash].[name].js',
+    publicPath: '/',
+    chunkFilename: '[id].[chunkhash].bundle.js'
   },
   devServer: {
     publicPath: '/',
@@ -85,16 +89,16 @@ module.exports = {
         test: /\.scss$/,
         use: [
           {
-          loader: "style-loader"
+          loader: 'style-loader'
           },
           {
-          loader: "css-loader"
+          loader: 'css-loader'
           },
           {
-          loader: "postcss-loader"
+          loader: 'postcss-loader'
           },
           {
-          loader: "sass-loader"
+          loader: 'sass-loader'
           }
         ]
       },
@@ -109,6 +113,7 @@ module.exports = {
     ]
   },
   plugins: [
+    new webpack.optimize.CommonsChunkPlugin('vendor'),
     HtmlWebpackPluginConfig,
     GitRevisionPluginConfig
   ]
