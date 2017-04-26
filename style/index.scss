@@ -3,9 +3,7 @@
 @import 'positioning';
 @import 'searchbar';
 @import 'plugins/animate';
-@import './fonts/league-gothic/stylesheet';
 @import './fonts/tum-neue-helvetica/stylesheet';
-@import 'header';
 @import url('https://fonts.googleapis.com/css?family=Roboto|Titillium+Web');
 
 /*
@@ -33,5 +31,5 @@ body {
   margin-bottom: 25px;
   background-color: white;
   box-shadow: 0 2px 5px 0 rgba(0,0,0,.16),0 2px 10px 0 rgba(0,0,0,.12);
-  padding: 15px 0;
+  padding: 15px;
 }
