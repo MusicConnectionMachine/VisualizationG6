@@ -45,9 +45,8 @@ export default class DetailTable extends React.Component {
       entries.push({
         name: 'Tags',
         value: props.myData.tags.map(name => {
-          var clickHandler = function () { this.context.router.transitionTo('/search/' + name) }.bind(this)
           return (
-            <span key={mappingKey++} onClick={clickHandler}><div className='label label-default'>{name}</div> </span>
+            <span key={mappingKey++}><div className='label label-default'>{name}</div> </span>
           )
         })
       })
