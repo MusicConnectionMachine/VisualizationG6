@@ -17,9 +17,10 @@ export default class DetailTable extends React.Component {
         { id: 'placeOfDeath', name: 'Place of Death' },
         { id: 'nationality', name: 'Nationality' }
       ]
-    } else if (props.type === 'releases') {
+    } else if (props.type === 'works') {
       defaultEntries = [
-        { id: 'title', name: 'Title' }
+        { id: 'title', name: 'Title' },
+        { id: 'compositionyear', name: 'Date of Composition' }
       ]
     }
     for (var i = 0; i < defaultEntries.length; i++) {

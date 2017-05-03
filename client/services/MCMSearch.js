@@ -4,8 +4,8 @@ const api = 'http://mcmapi.azurewebsites.net'
 
 export default class MCMSearch {
 
-  searchEntities (query, from, size) {
-    let getRequest = api + '/search/entities?q=' + query + '&offset=' + from + '&limit=' + size
+  searchEntities (type, query, from, size) {
+    let getRequest = api + '/' + type + '?q=' + query + '&offset=' + from + '&limit=' + size
     let promise = $.ajax({
       type: 'GET',
       headers: {
