@@ -38,7 +38,7 @@ const Embed = React.createClass({
           </div>
           <div id='timelineComponent'>
             <h2>Timeline Component</h2>
-            <WidgetComponent entityId='bb5e41c0-a0ad-4f38-8ee8-2f784a791e67' entityType='artists' widgetType='timeline' />
+            <WidgetComponent entityId='bb5e41c0-a0ad-4f38-8ee8-2f784a791e67' useMockups entityType='artists' widgetType='timeline' />
           </div>
           <div id='relationsComponent'>
             <h2>Relations Component</h2>
