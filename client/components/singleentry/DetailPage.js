@@ -46,7 +46,7 @@ export default class DetailPage extends React.Component {
     var title
     if (this.props.type === 'artists') {
       title = this.state.myData.name
-    } else if (this.props.type === 'releases') {
+    } else if (this.props.type === 'works') {
       title = this.state.myData.title
     } else {
       title = 'Unknown'

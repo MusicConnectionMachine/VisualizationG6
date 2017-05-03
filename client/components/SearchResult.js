@@ -30,11 +30,9 @@ export default class SearchResult extends React.Component {
           <td>{date}</td>
         </tr>
       )
-    }
-    if (type === 'releases') {
+    } else if (type === 'works') {
       let title = myData.title || 'Unknown'
-      let date = myData.date || 'Unknown'
-
+      let date = myData.compositionyear || 'Unknown'
       return (
         <tr className='animated fadeIn' onClick={this.clickHandler}>
           <th className='hidden-xs searchResult-icon' scope='row'>
