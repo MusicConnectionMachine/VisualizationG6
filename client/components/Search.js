@@ -39,6 +39,8 @@ class Search extends React.Component {
       works: [],
       errorArtists: false,
       errorWorks: false,
+      loadingArtists: true,
+      loadingWorks: true,
       oldSearch: '',
       totalArtists: 0,
       totalWorks: 0,
@@ -55,12 +57,13 @@ class Search extends React.Component {
   queryArtists (from) {
     if (this.props.searchTerm.length > 0) {
       this.state.oldSearch = this.props.searchTerm
+      this.state.loadingArtists = true
 
       let me = this
       this.mcmapi.searchEntities('artists', this.props.searchTerm, from, numberOfResults).then(function (response) {
-        me.setState({artists: response.items, totalArtists: response.total, fromArtists: from, errorArtists: false})
+        me.setState({artists: response.items, totalArtists: response.total, fromArtists: from, loadingArtists: false, errorArtists: false})
       }, function (error) {
-        me.setState({errorArtists: true})
+        me.setState({errorArtists: true, artists: [], totalArtists: 0, fromArtists: 0, loadingArtists: false})
         console.trace(error.message)
       })
     }
@@ -69,12 +72,13 @@ class Search extends React.Component {
   queryWorks (from) {
     if (this.props.searchTerm.length > 0) {
       this.state.oldSearch = this.props.searchTerm
+      this.state.loadingWorks = true
 
       let me = this
       this.mcmapi.searchEntities('works', this.props.searchTerm, from, numberOfResults).then(function (response) {
-        me.setState({works: response.items, totalWorks: response.total, errorWorks: false, fromWorks: from})
+        me.setState({works: response.items, totalWorks: response.total, errorWorks: false, loadingWorks: false, fromWorks: from})
       }, function (error) {
-        me.setState({errorWorks: true})
+        me.setState({errorWorks: true, works: [], totalWorks: 0, loadingWorks: false, fromWorks: 0})
         console.trace(error.message)
       })
     }
@@ -114,14 +118,15 @@ class Search extends React.Component {
     } else if (this.state.oldSearch !== this.props.searchTerm) {
       this.queryArtists(0)
       this.queryWorks(0)
-    } else if (this.state.totalArtists + this.state.totalReleases + this.state.totalWorks <= 0) {
+    } else if (this.state.totalArtists + this.state.totalWorks <= 0) {
       body = (<div className='searchMessage'>Sorry, we could not find anything for: {this.props.searchTerm}</div>)
     } else {
       body = (
         <div>
           { this.state.artists.length > 0 || this.state.errorArtists ? (<h2>Artists</h2>) : null }
           { this.state.errorArtists ? (<Error />) : null}
-          { this.state.artists.length > 0 ? (
+          { this.state.loadingArtists ? <Loading /> : null }
+          { this.state.artists.length > 0 && !this.state.errorArtists ? (
             <div>
               <table className='table table-hover'>
                 <thead>
@@ -136,12 +141,13 @@ class Search extends React.Component {
                 </tbody>
               </table>
               <Pagination current={this.state.fromArtists} total={this.state.totalArtists} step={numberOfResults} next={this.nextArtists} last={this.lastArtists} />
-            </div>) : !this.state.errorArtists ? <Loading /> : null
+            </div>) : null
           }
 
           { this.state.works.length > 0 || this.state.errorWorks ? (<h2>Works</h2>) : null }
           { this.state.errorWorks ? (<Error />) : null}
-          { this.state.works.length > 0 ? (
+          { this.state.loadingWorks ? <Loading /> : null }
+          { this.state.works.length && !this.state.errorWorks > 0 ? (
             <div>
               <table className='table table-hover'>
                 <thead>
@@ -156,7 +162,7 @@ class Search extends React.Component {
                 </tbody>
               </table>
               <Pagination current={this.state.fromWorks} total={this.state.totalWorks} step={numberOfResults} next={this.nextWorks} last={this.lastWorks} />
-            </div>) : !this.state.errorWorks ? <Loading /> : null
+            </div>) : null
           }
 
           <div className='text-right margin-bottom-10-px'>
