@@ -1,1 +1,1 @@
-export const widgetsHost = '/widgets'
+export const widgetsHost = 'http://mcmfrontend.azurewebsites.net/widgets'
