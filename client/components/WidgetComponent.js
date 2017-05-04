@@ -3,7 +3,7 @@ import '../../style/widgets.scss'
 import { widgetsHost } from '../config'
 
 const WIDGET_URLS = {
-  timeline: `${widgetsHost}/timeline-app.html?useMockups`,
+  timeline: `${widgetsHost}/timeline-app.html?`,
   relations: `${widgetsHost}/relations-widget.html?useMockups`,
   map: `${widgetsHost}/map-app.html?`
 }
@@ -31,11 +31,16 @@ export default class WidgetComponent extends React.Component {
   }
 
   render () {
-    const { entityId, entityType, widgetType } = this.props
+    const { entityId, entityType, widgetType, useMockups } = this.props
     const entityTypeWithoutS = entityType.substring(0, entityType.length - 1)
     return (
       <iframe
-        src={`${WIDGET_URLS[widgetType]}&entityId=${entityId}&entityType=${entityTypeWithoutS}`}
+        src={
+          `${WIDGET_URLS[widgetType]}` +
+          `${useMockups ? '&useMockups' : ''}` +
+          `&entityId=${entityId}` +
+          `&entityType=${entityTypeWithoutS}`
+        }
         className={`widget ${this.state.fullscreen ? 'widget--full-screen' : ''}`}
         frameBorder='0'
       />
@@ -46,5 +51,10 @@ export default class WidgetComponent extends React.Component {
 WidgetComponent.propTypes = {
   entityId: React.PropTypes.string.isRequired,
   entityType: React.PropTypes.string.isRequired,
-  widgetType: React.PropTypes.string.isRequired
+  widgetType: React.PropTypes.string.isRequired,
+  useMockups: React.PropTypes.bool
+}
+
+WidgetComponent.defaultProps = {
+  useMockups: false
 }
